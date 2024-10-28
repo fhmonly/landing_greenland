@@ -1,12 +1,16 @@
 <template>
-  <Body>
-    <NuxtLoadingIndicator color="red" :throttle="100" />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </Body>
+  <div class="flex flex-col justify-between w-full min-h-screen">
+    <AppNav />
+    <NuxtLoadingIndicator throttle="0" />
+    <NuxtPage />
+    <AppFooter />
+  </div>
 </template>
 <style>
+html,
+body {
+  scroll-behavior: smooth;
+}
 .no-tailwind * {
   all: revert;
 }
@@ -17,6 +21,17 @@
 
 .font-times {
   font-family: "Times New Roman", serif;
+}
+
+.text-size-main {
+  font-size: 2.7rem;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .text-size-main {
+    font-size: 1.7rem;
+    line-height: 1;
+  }
 }
 </style>
 <script setup>
