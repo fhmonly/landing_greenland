@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-between w-full min-h-screen">
     <AppNav />
-    <NuxtLoadingIndicator throttle="0" />
+    <NuxtLoadingIndicator :throttle="0" />
     <NuxtPage />
     <AppFooter />
   </div>
