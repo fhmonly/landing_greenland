@@ -1,0 +1,157 @@
+.btn-visit {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-visit .text {
+  margin-right: 10px;
+}
+
+.btn-visit .circle {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: 0.4s ease-in-out;
+}
+
+.btn-visit .arrow {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  transition: 0.4s ease-in-out;
+}
+
+.btn-visit:hover .circle {
+  background-color: white;
+}
+
+.btn-visit:hover .circle {
+  background-color: white;
+}
+
+.btn-visit:hover .arrow {
+  color: black;
+}
+
+.btn-visit {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-visit:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.btn-visit {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-visit:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+.btn-visit-black {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-visit-black .text {
+  margin-right: 10px;
+}
+
+.btn-visit-black .circle {
+  display: inline-block;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: 0.4s ease-in-out;
+}
+
+.btn-visit-black .arrow {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  transition: 0.4s ease-in-out;
+}
+
+.btn-visit-black:hover .arrow {
+  left: 5px;
+}
+
+.btn-visit-black:hover .circle {
+  background-color: #000;
+}
+
+.btn-visit-black:hover .arrow {
+  color: white;
+}
+
+.btn-visit-black {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-visit-black:hover {
+  transform: scale(1.1);
+  color: #000;
+}
+
+.btn-visit-green {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #38544c;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+.btn-visit-green .text {
+  margin-right: 10px;
+}
+.btn-visit-green .circle {
+  display: inline-block;
+  border: 2px solid #38544c;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: 0.4s ease-in-out;
+}
+.btn-visit-green .arrow {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  transition: 0.4s ease-in-out;
+}
+.btn-visit-green:hover .arrow {
+  left: 5px;
+}
+.btn-visit-green:hover .circle {
+  background-color: #38544c;
+}
