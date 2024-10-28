@@ -38,24 +38,26 @@
           <IconBiX width="24" height="24" />
         </label>
       </div>
-      <ul class="px-6 text-white">
-        <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-nunito text-lg my-3">
-          <NuxtLink href="/" class="scroll-link">Home</NuxtLink>
+      <ul class="px-6 pt-2 text-white">
+        <li class="hover:bg-[#FFFFFF45] font-nunito text-lg mb-1">
+          <NuxtLink href="/" class="block p-3 scroll-link">Home</NuxtLink>
         </li>
-        <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-nunito text-lg mb-3">
-          <NuxtLink href="/about" class="scroll-link">About</NuxtLink>
+        <li class="hover:bg-[#FFFFFF45] font-nunito text-lg mb-1">
+          <NuxtLink href="/about" class="block p-3 scroll-link">About</NuxtLink>
         </li>
-        <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-nunito text-lg mb-3">
-          <NuxtLink href="/clusters" class="scroll-link">Cluster</NuxtLink>
+        <li class="hover:bg-[#FFFFFF45] font-nunito text-lg mb-1">
+          <NuxtLink href="/clusters" class="block p-3 scroll-link"
+            >Cluster</NuxtLink
+          >
         </li>
-        <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-nunito text-lg mb-3">
-          <NuxtLink href="/news" class="scroll-link">News</NuxtLink>
+        <li class="hover:bg-[#FFFFFF45] font-nunito text-lg mb-1">
+          <NuxtLink href="/news" class="block p-3 scroll-link">News</NuxtLink>
         </li>
-        <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-nunito text-lg mb-3">
-          <NuxtLink href="/promo" class="scroll-link">Promo</NuxtLink>
+        <li class="hover:bg-[#FFFFFF45] font-nunito text-lg mb-1">
+          <NuxtLink href="/promo" class="block p-3 scroll-link">Promo</NuxtLink>
         </li>
-        <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-nunito text-lg mb-3">
-          <NuxtLink href="#footer" class="scroll-link">Contact</NuxtLink>
+        <li class="hover:bg-[#FFFFFF45] font-nunito text-lg mb-1">
+          <a href="#footer" class="block p-3 scroll-link">Contact</a>
         </li>
       </ul>
     </div>

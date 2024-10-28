@@ -115,16 +115,14 @@
 </template>
 <script setup>
 onMounted(() => {
-  document.addEventListener("DOMContentLoaded", function () {
-    const playButton = document.getElementById("playButton");
-    const videoOverlay = document.getElementById("videoOverlay");
-    const youtubeIframe = document.getElementById("youtubeIframe");
+  const playButton = document.getElementById("playButton");
+  const videoOverlay = document.getElementById("videoOverlay");
+  const youtubeIframe = document.getElementById("youtubeIframe");
 
-    playButton.addEventListener("click", function () {
-      const src = youtubeIframe.getAttribute("data-src");
-      youtubeIframe.setAttribute("src", src + "&autoplay=1");
-      videoOverlay.classList.add("hidden");
-    });
+  playButton.addEventListener("click", function () {
+    const src = youtubeIframe.getAttribute("data-src");
+    youtubeIframe.setAttribute("src", src + "&autoplay=1");
+    videoOverlay.classList.add("hidden");
   });
 });
 </script>
@@ -139,7 +137,7 @@ onMounted(() => {
       rgba(248, 244, 236, 0.3),
       rgba(248, 244, 236, 0)
     ),
-    url("./img/bGVideo.jpg");
+    url("/img/bGVideo.jpg");
   background-size: cover;
 }
 @keyframes pulse {
@@ -157,7 +155,7 @@ onMounted(() => {
 }
 
 #videoOverlay {
-  background-image: url("./img/video-bg.jpg");
+  background-image: url("/img/video-bg.jpg");
   background-size: cover;
   background-position: center;
   transition: opacity 0.5s ease;
