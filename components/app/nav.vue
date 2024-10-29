@@ -77,3 +77,12 @@
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 </style>
+<script setup>
+const router = useRouter();
+onMounted(() => {
+  router.afterEach(() => {
+    const menuToggle = document.querySelector("#menu-toggle");
+    menuToggle.checked = false;
+  });
+});
+</script>
