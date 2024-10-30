@@ -13,23 +13,12 @@
           <h1
             class="md:text-6xl text-2xl mb-5 text-[#3c4f4b] font-times md:leading-[75px] leading-[30px]"
           >
-            Beautifully designed for your work life balance
+            {{ settings.data.home1_title }}
           </h1>
-          <p
-            class="text-black font-nunito text-[15px] md:text-start text-justify"
-          >
-            <span>
-              Selamat datang di kawasan residensi-komersial premium terbaru di
-              Surabaya Barat, yang menghadirkan spirit keseimbangan dan
-              keselarasan hidup urban modern.</span
-            >
-            <br /><br /><span>
-              Masterplan Greenland seluas 100 Ha terdiri atas 8 residential
-              cluster dan 80 premium shophouse. Greenland adalah pilihan terbaik
-              untuk tempat tinggal, bisnis maupun rencana investasi properti
-              Anda.
-            </span>
-          </p>
+          <div
+            class="text-black font-nunito text-[15px] md:text-start text-justify no-tailwind"
+            v-html="settings.data.home1_content"
+          ></div>
         </div>
 
         <div
@@ -37,7 +26,7 @@
           data-aos="fade-left"
         >
           <img
-            src="/img/content-1.jpg"
+            :src="`${settings?.data?.home1_image || '/img/content-1.jpg'}`"
             alt="Image description"
             class="object-cover w-[260px] md:w-auto"
           />
@@ -48,8 +37,7 @@
             data-aos-delay="100"
           >
             <h3 class="text-3xl font-bold text-right font-times">
-              Rising comfort <br />
-              to the highest levels
+              {{ settings.data.home1_small_title }}
             </h3>
           </div>
         </div>
@@ -95,3 +83,6 @@
   height: 100vh;
 }
 </style>
+<script setup>
+const settings = useDataSettings();
+</script>

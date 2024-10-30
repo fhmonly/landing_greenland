@@ -5,11 +5,11 @@
   >
     <div class="container max-w-6xl">
       <div class="py-2 text-center md:py-16">
-        <h2 class="text-base text-black font-nunito">NEWS & EVENTS</h2>
+        <h2 class="text-base text-black font-nunito">{{settings.data.home4_small_title}}</h2>
         <h1
           class="md:px-0 px-2 md:text-6xl text-4xl font-base mt-2 font-times text-[#38544c]"
         >
-          Community Information at GreenLand
+          {{settings.data.home4_title}}
         </h1>
       </div>
       <div class="flex items-center justify-center w-full px-2 pt-12">
@@ -100,3 +100,7 @@
     </div>
   </section>
 </template>
+
+<script setup>
+const settings = useDataSettings();
+</script>

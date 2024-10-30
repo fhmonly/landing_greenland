@@ -1,17 +1,25 @@
+<script setup>
+const { showClusterGalery } = useClusterImageGalery()
+const config = useRuntimeConfig()
+const { data: clusters, status, error, refresh } = await useFetch(`${config.public.apiUrl}/clusters`, {
+    pick: ["data"],
+    key: "api-clusters"
+});
+</script>
 <template>
   <section id="section3" class="bg-[#f5f4ed]">
     <h1
       class="md:text-6xl text-4xl text-[#3c4f4b] font-times relative text-center"
       data-aos="fade-up"
     >
-      Clusters at GreenLand
+      {{ settings.data.home2_title }}
     </h1>
     <p
       class="px-5 mt-5 text-center text-md md:mt-2 md:px-0"
       data-aos="fade-up"
       data-aos-delay="100"
     >
-      Unique contemporary architecture style to comfort your needs
+      {{ settings.data.home2_small_title }}
     </p>
 
     <div
@@ -134,3 +142,6 @@
     </div>
   </section>
 </template>
+<script setup>
+const settings = useDataSettings();
+</script>

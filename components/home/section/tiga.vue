@@ -1,3 +1,17 @@
+<script setup>
+  const settings = useDataSettings();
+onMounted(() => {
+  const playButton = document.getElementById("playButton");
+  const videoOverlay = document.getElementById("videoOverlay");
+  const youtubeIframe = document.getElementById("youtubeIframe");
+
+  playButton.addEventListener("click", function () {
+    const src = youtubeIframe.getAttribute("data-src");
+    youtubeIframe.setAttribute("src", settings.value.data.home3_video_ytb + "&autoplay=1");
+    videoOverlay.classList.add("hidden");
+  });
+});
+</script>
 <template>
   <section id="section4" class="py-4 bg-blend md:py-16">
     <div class="py-12 text-center">
@@ -5,7 +19,7 @@
         class="md:text-6xl text-4xl text-[#3c4f4b] font-times mb-2 md:px-0 px-12"
         data-aos="fade-down"
       >
-        A Glimpse of GreenLand
+        {{settings.data.home3_title}}
       </h1>
     </div>
     <div class="flex justify-center">
@@ -48,9 +62,7 @@
       <p
         class="text-black mt-4 md:w-[48%] w-full text-center md:px-0 px-5 mx-auto md:text-[10px] text-xs tracking-wider"
       >
-        Subscribe ke Youtube channel GreenLand dan dapatkan perkembangan serta
-        promo terkini. Anda dapat melihat dengan lebih detil aneka fitur dan
-        visual arsitektur hunian di GreenLand residence Surabaya Barat
+        {{settings.data.home3_content}}
       </p>
       <div
         class="grid justify-center gap-6 mt-10 md:flex place-items-stretch md:mt-16 md:gap-24"
@@ -113,19 +125,6 @@
     </div>
   </section>
 </template>
-<script setup>
-onMounted(() => {
-  const playButton = document.getElementById("playButton");
-  const videoOverlay = document.getElementById("videoOverlay");
-  const youtubeIframe = document.getElementById("youtubeIframe");
-
-  playButton.addEventListener("click", function () {
-    const src = youtubeIframe.getAttribute("data-src");
-    youtubeIframe.setAttribute("src", src + "&autoplay=1");
-    videoOverlay.classList.add("hidden");
-  });
-});
-</script>
 <style scoped>
 .bg-blend {
   background: linear-gradient(
