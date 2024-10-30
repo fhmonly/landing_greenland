@@ -1,77 +1,32 @@
 <template>
   <div>
-    <section
-      id="section0"
-      class="bg-cover bg-center w-full bg-blend md:h-[300px] h-[200px] md:pt-40 pt-0 flex justify-center items-end md:items-center"
-    >
+    <section id="section0"
+      class="bg-cover bg-center w-full bg-blend md:h-[300px] h-[200px] md:pt-40 pt-0 flex justify-center items-end md:items-center">
       <div class="text-center">
         <h2 class="text-thin font-nunito text-[14px] text-black">
-          PROMO & OFFERS
+          {{ settings.data.hero_promo_title_1 }}
         </h2>
         <h1 class="text-size-main font-times text-[#38544c]">
-          Your Green Home Awaits
+          {{ settings.data.hero_promo_info_1 }}
         </h1>
       </div>
     </section>
 
-    <section
-      id="section1"
-      class="bg-[#F8F4EC] w-full justify-center md:pt-12 pt-8 pb-24"
-    >
+    <section id="section1" class="bg-[#F8F4EC] w-full justify-center md:pt-12 pt-8 pb-24">
       <div class="w-full">
-        <div class="flex items-center justify-center w-full px-2 pb-4">
-          <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
-            <div
-              class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
-              data-aos="fade-up"
-              data-aos-duration="300"
-            >
-              <div>
-                <p class="text-[10px] font-semibold">NEWS - 3 SEPTEMBER 2024</p>
-                <h3 class="text-xl font-base leading-[30px] mt-2">
-                  GreenLand antisipasi MPOX dengan POS Kesehatan
-                </h3>
-              </div>
-              <div class="mt-auto">
-                <hr class="my-3 border-[#BFCEC9FF]" />
-                <a href="#" class="mb-4 text-[10px] font-bold">READ MORE</a>
-              </div>
+        <div class="flex flex-wrap items-center justify-center w-full gap-4 px-2 pb-4">
+          <div
+            class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
+            data-aos="fade-up" data-aos-duration="300" v-for="promo in promos.data.data" :key="promo">
+            <div>
+              <p class="text-[10px] font-semibold">NEWS - {{ $dayjs(promo.date_input).locale("id").fromNow() }}</p>
+              <h3 class="text-xl font-base leading-[30px] mt-2">
+                {{ promo.title }}
+              </h3>
             </div>
-            <div
-              class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
-              data-aos="fade-up"
-              data-aos-duration="300"
-              data-aos-delay="100"
-            >
-              <div>
-                <p class="text-[10px] font-semibold">NEWS - 5 SEPTEMBER 2024</p>
-                <h3 class="text-xl font-base leading-[30px] mt-2">
-                  Pembaharuan aplikasi P3RS penghuni GreenLand sudah bisa di
-                  download
-                </h3>
-              </div>
-              <div class="mt-auto">
-                <hr class="my-3 border-[#BFCEC9FF]" />
-                <a href="#" class="mb-4 text-[10px] font-bold">READ MORE</a>
-              </div>
-            </div>
-            <div
-              class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
-              data-aos="fade-up"
-              data-aos-duration="300"
-              data-aos-delay="200"
-            >
-              <div>
-                <p class="text-[10px] font-semibold">NEWS - 5 SEPTEMBER 2024</p>
-                <h3 class="text-xl font-base leading-[30px] mt-2">
-                  Pembaharuan aplikasi P3RS penghuni GreenLand sudah bisa di
-                  download
-                </h3>
-              </div>
-              <div class="mt-auto">
-                <hr class="my-3 border-[#BFCEC9FF]" />
-                <a href="#" class="mb-4 text-[10px] font-bold">READ MORE</a>
-              </div>
+            <div class="mt-auto">
+              <hr class="my-3 border-[#BFCEC9FF]" />
+              <NuxtLink :to="`/promos/${promo.topik_id}`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
             </div>
           </div>
         </div>
@@ -79,18 +34,32 @@
     </section>
   </div>
 </template>
-<style scoped>
-.bg-blend {
-  background: linear-gradient(
-      to top,
-      rgb(248, 244, 236),
-      rgba(248, 244, 236, 0.9),
-      rgba(248, 244, 236, 0.8),
-      rgba(248, 244, 236, 0.7),
-      rgba(248, 244, 236, 0.6),
-      rgba(248, 244, 236, 0.6)
-    ),
-    url("/img/bGPromo.png");
-  background-size: cover;
-}
-</style>
+<script setup>
+const settings = useDataSettings()
+const config = useRuntimeConfig()
+const { data: promos, status, error, refresh } = await useFetch(`${config.public.apiUrl}/promos`, {
+  pick: ["data"],
+  key: "api-promos"
+});
+useHead({
+  style: [
+    {
+      innerHTML: `
+        .bg-blend {
+          background: linear-gradient(
+              to top,
+              rgb(248, 244, 236),
+              rgba(248, 244, 236, 0.9),
+              rgba(248, 244, 236, 0.8),
+              rgba(248, 244, 236, 0.7),
+              rgba(248, 244, 236, 0.6),
+              rgba(248, 244, 236, 0.6)
+            ),
+            url("${config.public.dirUrl}/images/static/${settings.value.data.hero_promo_image_1}");
+          background-size: cover;
+        }
+      `
+    }
+  ]
+});
+</script>
