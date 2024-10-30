@@ -5,7 +5,18 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => ['swiper-container', 'swiper-slide'].includes(tag),
     },
   },
+  runtimeConfig: {
+    public: {
+      apiEndpoint: process.env.API_ENDPOINT,
+      dirUrl: process.env.DIR_URL,
+      apiUrl: process.env.API_URL,
+    }
+  },
+  dayjs: {
+    locales: ["id", "en"],
+    defaultLocale: "id"
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['nuxt-aos', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  modules: ['nuxt-aos', '@nuxtjs/tailwindcss', '@nuxt/icon', 'dayjs-nuxt'],
 })
