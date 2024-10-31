@@ -13,13 +13,13 @@
     </section>
 
     <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-12 md:pt-0">
-      <div class="flex flex-wrap items-center justify-center w-full gap-4 px-2 pb-4">
+      <div class="flex flex-wrap items-stretch justify-center w-full gap-4 px-2 pb-4">
         <div
           class="bg-white text-[#38544c] w-full max-w-[350px] tablet:max-w-[48%] md:max-w-[40%] lg:max-w-[31%] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
           data-aos="fade-up" data-aos-duration="300" v-for="item in news.data.data" :key="item.blog_id">
           <div>
             <p class="text-[10px] font-semibold">NEWS - {{ $dayjs(item.date_input).locale("id").fromNow() }}</p>
-            <h3 class="text-xl font-base leading-[30px] mt-2">
+            <h3 class="text-xl font-base leading-[30px] mt-2 line-clamp-3">
               {{ item.title }}
             </h3>
           </div>
