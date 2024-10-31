@@ -83,4 +83,21 @@ useHead({
     },
   ],
 });
+
+const { showImageGalery } = useImageGalery()
+onMounted(() => {
+  window.swal = () => showImageGalery({
+    galeries: [
+      "https://wallpapercave.com/wp/wp11312064.jpg",
+      "https://picfiles.alphacoders.com/586/586929.jpg",
+      "https://wallpapercave.com/wp/wp11312295.jpg",
+      "https://wallpapercave.com/wp/wp11312192.jpg"
+    ].map(image => {
+      return {
+        image,
+        description: "rynare"
+      }
+    })
+  })
+});
 </script>
