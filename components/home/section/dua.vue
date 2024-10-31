@@ -1,11 +1,3 @@
-<script setup>
-const { showClusterGalery } = useClusterImageGalery()
-const config = useRuntimeConfig()
-const { data: clusters, status, error, refresh } = await useFetch(`${config.public.apiUrl}/clusters`, {
-    pick: ["data"],
-    key: "api-clusters"
-});
-</script>
 <template>
   <section id="section3" class="bg-[#f5f4ed]">
     <h1
@@ -25,9 +17,14 @@ const { data: clusters, status, error, refresh } = await useFetch(`${config.publ
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-10 md:w-[87%] w-full mx-auto md:px-0 px-5"
     >
-      <div class="relative group" data-aos="zoom-in">
+      <div
+        class="relative group"
+        data-aos="zoom-in"
+        v-for="cluster in clusters.data.data"
+        :key="cluster.id"
+      >
         <img
-          src="/img/cluster-1.jpg"
+          :src="`${config.public.dirUrl}/${cluster.image}`"
           alt="Photo 1"
           class="object-cover w-full h-auto"
         />
@@ -37,73 +34,10 @@ const { data: clusters, status, error, refresh } = await useFetch(`${config.publ
           <h3
             class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300"
           >
-            Garbera Cluster
+            {{ cluster.name }}
           </h3>
           <a
-            href="#"
-            class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
-            >VIEW GALLERY</a
-          >
-        </div>
-      </div>
-      <div class="relative group" data-aos="zoom-in" data-aos-delay="100">
-        <img
-          src="/img/cluster-2.jpg"
-          alt="Photo 2"
-          class="object-cover w-full h-auto"
-        />
-        <div
-          class="absolute inset-0 flex flex-col justify-end text-white transition-all duration-300 bg-black bg-opacity-20 group-hover:bg-white group-hover:bg-opacity-50"
-        >
-          <h3
-            class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300"
-          >
-            Wisteria Cluster
-          </h3>
-          <a
-            href="#"
-            class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
-            >VIEW GALLERY</a
-          >
-        </div>
-      </div>
-      <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
-        <img
-          src="/img/cluster-3.jpg"
-          alt="Photo 3"
-          class="object-cover w-full h-auto"
-        />
-        <div
-          class="absolute inset-0 flex flex-col justify-end text-white transition-all duration-300 bg-black bg-opacity-20 group-hover:bg-white group-hover:bg-opacity-50"
-        >
-          <h3
-            class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300"
-          >
-            Natura Cluster
-          </h3>
-          <a
-            href="#"
-            class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
-            >VIEW GALLERY</a
-          >
-        </div>
-      </div>
-      <div class="relative group" data-aos="zoom-in" data-aos-delay="300">
-        <img
-          src="/img/cluster-4.jpg"
-          alt="Photo 4"
-          class="object-cover w-full h-auto"
-        />
-        <div
-          class="absolute inset-0 flex flex-col justify-end text-white transition-all duration-300 bg-black bg-opacity-20 group-hover:bg-white group-hover:bg-opacity-50"
-        >
-          <h3
-            class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300"
-          >
-            Armaya Cluster
-          </h3>
-          <a
-            href="#"
+            :href="`/clusters/${cluster.id}`"
             class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
             >VIEW GALLERY</a
           >
@@ -144,4 +78,14 @@ const { data: clusters, status, error, refresh } = await useFetch(`${config.publ
 </template>
 <script setup>
 const settings = useDataSettings();
+const config = useRuntimeConfig();
+const {
+  data: clusters,
+  status,
+  error,
+  refresh,
+} = await useFetch(`${config.public.apiUrl}/clusters`, {
+  pick: ["data"],
+  key: "api-clusters",
+});
 </script>
