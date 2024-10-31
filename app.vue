@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col justify-between w-full min-h-screen">
-    <button @click="settings = null" class="mt-[80px]">clear</button>
     <AppNav />
     <NuxtLoadingIndicator :throttle="0" />
     <NuxtPage />
