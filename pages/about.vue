@@ -5,17 +5,19 @@
       <div class="flex flex-row h-screen bg-black bg-opacity-20">
         <div class="flex items-center justify-start flex-grow">
           <div class="px-8 text-left text-white md:px-16">
-            <h1 class="text-4xl font-normal leading-tight md:text-5xl text-size-main font-times heroTitlePages"
+            <h1
+              class="font-normal leading-tight text-size-main font-times heroTitlePages text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px]"
               data-aos="fade-up" v-html="settings.data.hero_about_content_1"></h1>
           </div>
         </div>
       </div>
     </section>
-    <section id="section2" class="bg-[#3c4f4b] h-screen">
-      <div class="flex items-center justify-center h-full">
+    <section id="section2" class="bg-[#3c4f4b] pt-10 sm:pt-0 min-h-screen flex flex-col">
+      <div class="flex items-center justify-center h-full grow">
         <div class="block px-16 mx-auto mb-16 md:flex">
-          <div class="w-2/4 text-white font-nunito text-md" data-aos="fade-down">
-            <span class="font-thin text-[14px]">{{ settings.data.about1_small_title }}</span> <br>
+          <div class="w-2/4 text-white font-nunito text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]"
+            data-aos="fade-down">
+            <span class="font-thin">{{ settings.data.about1_small_title }}</span> <br>
             <span class="font-semibold">{{ settings.data.about1_title }}</span>
           </div>
           <div class="w-3/4 mt-5 md:mt-0" data-aos="fade-up">
@@ -24,7 +26,7 @@
           </div>
         </div>
       </div>
-      <h1 class="relative inset-x-0 bottom-0 gradient-text font-times" data-aos="slide-up">
+      <h1 class="inset-x-0 pl-2 mt-auto gradient-text font-times" data-aos="slide-up">
         Greenland
       </h1>
     </section>
@@ -34,24 +36,22 @@
     </section>
     <section id="section4" class="bg-[#f5f4ed] h-fit">
       <div class="grid items-center justify-center h-full">
-        <div class="order-2 block px-16 mx-auto mt-6 mb-8 md:flex md:mt-16 md:order-1">
+        <div class="order-2 block px-6 sm:px-12 mx-auto mt-6 mb-8 md:flex md:mt-16 md:order-1">
           <div class="w-2/4 font-nunito text-main text-md" data-aos="zoom-in">
             <span class="font-thin text-[14px]">{{ settings.data.about2_small_title }}</span>
           </div>
-          <div class="w-3/4 mt-5 md:mt-0">
-            <div class="text-size-main md:w-[100%] w-[150%] text-main font-times" id="textSection2" data-aos="zoom-in"
-              v-html="settings.data.about1_content"></div>
-            <div class="text-black text-desc md:w-[90%] w-[139%] text-justify font-nunito mt-8 no-tailwind"
+          <div class="mt-5 md:mt-0 md:w-3/4 lg:pr-[6rem]">
+            <h1 class="text-size-main text-main font-times" id="textSection2" data-aos="zoom-in"
+              v-html="settings.data.about2_title"></h1>
+            <div
+              class="text-black md:w-[90%] text-justify font-nunito mt-8 no-tailwind text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]"
               data-aos="fade-up" v-html="settings.data.about2_content">
             </div>
           </div>
         </div>
-        <div class="flex order-1 w-full place-items-end md:order-2">
-          <div class="md:w-2/4 w-[0%] text-second">.</div>
-          <div class="w-full pl-0 m-5 md:w-3/4 md:pl-3 md:m-0" data-aos="fade-down">
-            <img :src="`${config.public.dirUrl}/images/static/${settings.data.about2_image_banner}`" alt=""
-              class="place-items-end" height="10px" />
-          </div>
+        <div class="flex order-1 w-full place-items-end md:order-2 justify-end">
+          <img :src="`${config.public.dirUrl}/images/static/${settings.data.about2_image_banner}`" alt=""
+            class="w-full md:pl-[14.9vw] p-5 md:w-3/4 md:p-0" data-aos="fade-down" />
         </div>
       </div>
     </section>
@@ -133,7 +133,7 @@
 <script setup>
 const settings = useDataSettings();
 const config = useRuntimeConfig();
-
+const { showImageGalery } = useImageGalery()
 onMounted(() => {
   const heroTitlePages = document.querySelector('.heroTitlePages');
   heroTitlePages.innerHTML = heroTitlePages.innerHTML.replace(/(?:\r\n|\r|\n)/g, '<br>');
