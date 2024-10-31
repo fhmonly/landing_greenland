@@ -5,9 +5,7 @@
       <div class="flex flex-row h-screen bg-black bg-opacity-20">
         <div class="flex items-center justify-start flex-grow">
           <div class="px-8 text-left text-white md:px-16">
-            <h1 class="text-4xl font-normal leading-tight md:text-5xl text-size-main font-times" data-aos="fade-up">
-              {{ settings.data.hero_about_title_1 }}
-            </h1>
+            <h1 class="text-4xl font-normal leading-tight md:text-5xl text-size-main font-times heroTitlePages" data-aos="fade-up" v-html="settings.data.hero_about_content_1"></h1>
           </div>
         </div>
       </div>
@@ -16,11 +14,11 @@
       <div class="flex items-center justify-center h-full">
         <div class="block px-16 mx-auto mb-16 md:flex">
           <div class="w-2/4 text-white font-nunito text-md" data-aos="fade-down">
-            {{settings.data.about1_small_title}}
+            <span class="font-thin text-[14px]">{{settings.data.about1_small_title}}</span> <br>
+            <span class="font-semibold">{{settings.data.about1_title}}</span>
           </div>
           <div class="w-3/4 mt-5 md:mt-0" data-aos="fade-up">
-            <div class="text-white text-size-main font-times opacity-60 no-tailwind" id="textSection2"
-              v-html="settings.data.about1_title"></div>
+            <div class="text-white text-size-main font-times opacity-60 no-tailwind textSection2Tops" id="textSection2" v-html="settings.data.about1_content"></div>
           </div>
         </div>
       </div>
@@ -35,12 +33,10 @@
       <div class="grid items-center justify-center h-full">
         <div class="order-2 block px-16 mx-auto mt-6 mb-8 md:flex md:mt-16 md:order-1">
           <div class="w-2/4 font-nunito text-main text-md" data-aos="zoom-in">
-            <span class="font-thin text-[14px]">{{ settings.data.about2_small_title }}</span> <br />
+            <span class="font-thin text-[14px]">{{ settings.data.about2_small_title }}</span>
           </div>
           <div class="w-3/4 mt-5 md:mt-0">
-            <p class="text-size-main md:w-[100%] w-[150%] text-main font-times" id="textSection2" data-aos="zoom-in">
-              {{ settings.data.about2_title }}
-            </p>
+            <div class="text-size-main md:w-[100%] w-[150%] text-main font-times" id="textSection2" data-aos="zoom-in" v-html="settings.data.about1_content"></div>
             <div class="text-black text-desc md:w-[90%] w-[139%] text-justify font-nunito mt-8 no-tailwind" data-aos="fade-up" v-html="settings.data.about2_content">
             </div>
           </div>
@@ -129,4 +125,13 @@
 <script setup>
 const settings = useDataSettings();
 const config = useRuntimeConfig();
+
+onMounted(() => {
+  const heroTitlePages = document.querySelector('.heroTitlePages');
+  heroTitlePages.innerHTML = heroTitlePages.innerHTML.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+  const topTitlePage2 = document.querySelector('.textSection2Tops');
+  topTitlePage2.innerHTML = topTitlePage2.innerHTML.replace(/(?:\r\n|\r|\n)/g, '<br>');
+  
+  })
 </script>

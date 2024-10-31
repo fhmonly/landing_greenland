@@ -1,11 +1,3 @@
-<script setup>
-const { showClusterGalery } = useClusterImageGalery()
-const config = useRuntimeConfig()
-const { data: clusters, status, error, refresh } = await useFetch(`${config.public.apiUrl}/clusters`, {
-    pick: ["data"],
-    key: "api-clusters"
-});
-</script>
 <template>
   <section id="section3" class="bg-[#f5f4ed]">
     <h1
@@ -144,4 +136,11 @@ const { data: clusters, status, error, refresh } = await useFetch(`${config.publ
 </template>
 <script setup>
 const settings = useDataSettings();
+
+const { showClusterGalery } = useClusterImageGalery()
+const config = useRuntimeConfig()
+const { data: clusters, status, error, refresh } = await useFetch(`${config.public.apiUrl}/clusters`, {
+    pick: ["data"],
+    key: "api-clusters"
+});
 </script>
