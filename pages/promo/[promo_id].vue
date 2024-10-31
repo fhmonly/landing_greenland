@@ -1,14 +1,14 @@
 <script setup>
 useSeoMeta({
   titleTemplate: "",
-  title: "Articles",
+  title: "Promo",
 });
 
-const route = useRoute();
 const config = useRuntimeConfig()
+const route = useRoute();
 
 const { data: article, status, error, refresh } = 
-await useFetch(`${config.public.apiUrl}/blog?id=${route.params.news_id}`, {
+await useFetch(`${config.public.apiUrl}/promo?id=${route.params.promo_id}`, {
   pick: ["data"],
 });
 
@@ -21,7 +21,7 @@ const results = article?.value?.data
       class="bg-cover bg-center w-full bg-blend md:h-[330px] h-[200px] flex justify-center items-end md:items-center"
     >
       <div class="text-center">
-        <h2 class="text-thin font-nunito text-[14px] text-black">Articles</h2>
+        <h2 class="text-thin font-nunito text-[14px] text-black">Promo</h2>
         <h1 class="text-size-main font-times text-[#38544c] max-w-[75%] mx-auto">
           {{ results.title }}
         </h1>
@@ -60,7 +60,7 @@ const results = article?.value?.data
               <div class="py-3"></div>
               <div class="flex justify-center"><NuxtLink to="/news" class="text-[15px] font-bold">
                 <Icon name="material-symbols:arrow-back-ios-new" style="color: black; position: relative; top: 2px;" />
-                Back to News</NuxtLink></div>
+                Back Promo</NuxtLink></div>
               <div class="py-4"></div>
             </div>
           </div>
