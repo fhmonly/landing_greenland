@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col justify-between w-full min-h-screen">
+    <button @click="settings = null" class="mt-[80px]">clear</button>
     <AppNav />
     <NuxtLoadingIndicator :throttle="0" />
     <NuxtPage />
@@ -38,8 +39,8 @@ body {
 </style>
 <script setup>
 const settings = useDataSettings();
+const config = useRuntimeConfig();
 onServerPrefetch(async () => {
-  const config = useRuntimeConfig();
   const serverSettings = useDataSettings();
   const { data } = await useFetch(`${config.public.apiUrl}/settings`, {
     key: "api-settings",
@@ -85,6 +86,7 @@ useHead({
 });
 
 const { showImageGalery } = useImageGalery()
+const router = useRouter();
 onMounted(() => {
   window.swal = () => showImageGalery({
     galeries: [
@@ -99,5 +101,22 @@ onMounted(() => {
       }
     })
   })
+  router.beforeEach(async (to, from, next) => {
+    if (!settings.value?.data) {
+      try {
+        const { data } = await useFetch(`${config.public.apiUrl}/settings`, {
+          key: "api-settings",
+          pick: ["data"],
+        });
+
+        settings.value = data.value;
+      } catch (error) {
+        console.error("Gagal mengambil data settings:", error);
+        return next(false);
+      }
+    }
+    next();
+  });
+
 });
 </script>
