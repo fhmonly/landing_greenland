@@ -1,6 +1,7 @@
 <script setup>
 const route = useRoute();
 const config = useRuntimeConfig();
+const { showImageGalery } = useImageGalery()
 const {
   data: cluster,
   status,
@@ -36,10 +37,7 @@ useHead({
 </script>
 <template>
   <div>
-    <section
-      id="section0"
-      class="items-end justify-center block w-full bg-center bg-cover bg-blend h-fit"
-    >
+    <section id="section0" class="items-end justify-center block w-full bg-center bg-cover bg-blend h-fit">
       <div class="pt-48 text-center" data-aos="slide-up">
         <h2 class="text-thin font-nunito text-[14px] text-black">
           GREENLAND CLUSTERS
@@ -50,18 +48,20 @@ useHead({
       </div>
 
       <div class="flex flex-wrap gap-8 px-16 pt-12">
-        <div
-          class="md:w-[48%] w-full bg-[#38544c] bg-center bg-no-repeat bg-fixed"
-          data-aos="fade-down"
-          v-for="facade in cluster.data.facade"
-          :key="facade.id"
-          :style="`background-image:url('${config.public.dirUrl}/${facade.image}')`"
-        >
-          <div
-            class="flex items-center justify-between px-4 pt-48 pb-3 text-white md:pt-64"
-          >
+        <div class="md:w-[48%] w-full bg-[#38544c] bg-center bg-no-repeat bg-fixed" data-aos="fade-down"
+          v-for="(facade, index) in cluster.data.facade" :key="facade.id"
+          :style="`background-image:url('${config.public.dirUrl}/${facade.image}')`">
+          <div class="flex items-center justify-between px-4 pt-48 pb-3 text-white md:pt-64">
             <span class="text-lg font-times">{{ facade.name }}</span>
-            <p class="text-[10px] font-nunito">VIEW GALLERY</p>
+            <button type="button" class="text-[10px] font-nunito" @click="showImageGalery({
+              galeries: cluster?.data?.facade.map(f => {
+                return {
+                  image: `${config.public.dirUrl}/${f.image}`,
+                  description: f.name
+                }
+              }),
+              activeImageIndex: index
+            })">VIEW GALLERY</button>
           </div>
         </div>
       </div>
@@ -70,14 +70,10 @@ useHead({
       <div class="flex-row justify-between block px-16 pt-10 md:flex">
         <div class="w-full md:w-3/4">
           <p class="font-bold text-[#38544c] pb-6" data-aos="fade-up">
-            <span>{{ cluster.data.name }}</span
-            ><span class="font-thin"> CONCEPT</span>
+            <span>{{ cluster.data.name }}</span><span class="font-thin"> CONCEPT</span>
           </p>
-          <div
-            class="md:w-[80%] w-full leading-[25px] text-[12px] font-[490] no-tailwind"
-            data-aos="fade-up"
-            v-html="cluster.data.contents"
-          ></div>
+          <div class="md:w-[80%] w-full leading-[25px] text-[12px] font-[490] no-tailwind" data-aos="fade-up"
+            v-html="cluster.data.contents"></div>
         </div>
         <div class="w-full mt-8 md:w-1/4 md:mt-0">
           <p class="font-thin text-[#38544c] md:pb-6 pb-8" data-aos="fade-down">
@@ -85,21 +81,15 @@ useHead({
           </p>
           <ul class="text-xs font-bold text-[#38544c]" data-aos="fade-down">
             <li class="flex mb-2">
-              <a
-                :href="`${config.public.dirUrl}/${cluster.data.plan_map}`"
-                target="_blank"
-                class="flex items-center justify-center gap-2"
-              >
+              <a :href="`${config.public.dirUrl}/${cluster.data.plan_map}`" target="_blank"
+                class="flex items-center justify-center gap-2">
                 <IconBiFiletypePdf width="18" height="18" />
                 Garbera Plan Map
               </a>
             </li>
             <li class="flex">
-              <a
-                :href="`${config.public.dirUrl}/${cluster.data.floor_map}`"
-                target="_blank"
-                class="flex items-center justify-center gap-2"
-              >
+              <a :href="`${config.public.dirUrl}/${cluster.data.floor_map}`" target="_blank"
+                class="flex items-center justify-center gap-2">
                 <IconBiFiletypePdf width="18" height="18" />
                 Garbera Floor Map
               </a>
@@ -110,12 +100,8 @@ useHead({
 
       <div class="flex justify-end px-16 py-28">
         <div class="text-center">
-          <NuxtLink
-            href="/clusters"
-            class="flex items-center gap-2 pt-5 mx-auto btn-visit-black"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
+          <NuxtLink href="/clusters" class="flex items-center gap-2 pt-5 mx-auto btn-visit-black" data-aos="fade-up"
+            data-aos-delay="300">
             <span class="text-xs tracking-wider text">BACK TO CLUSTERS</span>
             <span class="circle">
               <span class="arrow">
