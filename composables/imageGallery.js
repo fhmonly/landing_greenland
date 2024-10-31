@@ -64,11 +64,11 @@ export function useImageGalery() {
             background-position: center;
           }
           .mySwiper {
-            height: 80%;
+            height: 85%;
             width: 100%;
           }
           .mySwiper2 {
-            height: 20%;
+            height: 15%;
             box-sizing: border-box;
             padding: 10px 0;
           }
@@ -95,7 +95,7 @@ export function useImageGalery() {
         const swiperSlides = swiper.querySelectorAll(
           "swiper-slide"
         );
-        const slide0 = swiperSlides[0];
+        const slide0 = swiperSlides[activeImageIndex];
         const image0 = slide0.querySelector("img");
         const imageWidth0 = image0.width;
         const imageHeight0 = image0.height;
