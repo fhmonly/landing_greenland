@@ -7,9 +7,9 @@
         background-size: cover;
         background-position: center;
       "
-      class="flex flex-col"
+      class="flex flex-col justify-center"
     >
-      <div class="md:pt-40 pt-[14rem] md:pl-20 pl-5">
+      <div class="pt-[64px] md:pl-20 pl-5">
         <h1
           class="text-white md:text-6xl text-4xl font-medium leading-tight font-times"
           data-aos="fade-up"

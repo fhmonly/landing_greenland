@@ -64,7 +64,7 @@
   </header>
 </template>
 <style scoped>
-#menu-toggle + #side-menu {
+#side-menu {
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
@@ -82,7 +82,7 @@ const router = useRouter();
 onMounted(() => {
   router.afterEach(() => {
     const menuToggle = document.querySelector("#menu-toggle");
-    menuToggle.checked = false;
+    if (menuToggle.checked) menuToggle.checked = false;
   });
 });
 </script>
