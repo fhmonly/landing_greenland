@@ -1,11 +1,11 @@
 <template>
   <div>
     <HomeSectionHero class="w-full h-screen" />
-    <HomeSectionSatu />
-    <section id="section2" class="bg-blend-img"></section>
-    <HomeSectionDua />
-    <HomeSectionTiga />
-    <HomeSectionEmpat />
+    <HomeSectionSatu class="px-6 sm:px-12" />
+    <section id="section2" class="px-6 bg-blend-img sm:px-12"></section>
+    <HomeSectionDua class="px-6 sm:px-12" />
+    <HomeSectionTiga class="px-6 sm:px-12" />
+    <HomeSectionEmpat class="px-6 sm:px-12" />
     <HomeSectionLima />
   </div>
 </template>
