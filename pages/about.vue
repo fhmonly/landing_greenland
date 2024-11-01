@@ -77,16 +77,14 @@
 </template>
 <style scoped>
 .gradient-text {
+line-height: 75px;
   font-size: 115px;
   background: linear-gradient(to top,
-      rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0));
   -webkit-background-clip: text;
   background-clip: text;
