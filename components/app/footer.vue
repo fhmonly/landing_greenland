@@ -22,10 +22,10 @@
       >
         <a
           target="_blank"
-          href="https://wa.me/6289509512660?text=urlencodedtext"
+           :href="`https://wa.me/${staticData?.data?.contact_wa}`"
           style="text-decoration: none"
         >
-          NINA: +62 81 2345 7788
+        {{ settings.data.contact_wa_label }}: {{ settings.data.contact_wa }}
         </a>
       </p>
       <p
@@ -43,7 +43,7 @@
       <hr class="border-gray-400 mb-6 border-t-[1px]" />
       <div class="md:flex block justify-between">
         <p class="text-[10px]">
-          © GREENLAND RESIDENCE 2024 - A PROJECT BY PT BANGUN PERSADA BERJAYA.
+          &copy; GREENLAND RESIDENCE 2024 - A PROJECT BY PT BANGUN PERSADA BERJAYA.
         </p>
         <p class="text-[10px] md:mt-0 mt-4">
           WEBSITE DESIGN &amp; DEVELOPMENT BY MARK DESIGN INDONESIA.
@@ -52,3 +52,6 @@
     </div>
   </footer>
 </template>
+<script setup>
+const settings = useDataSettings();
+</script>
