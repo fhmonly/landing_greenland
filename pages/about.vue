@@ -71,24 +71,7 @@
           </p>
         </div>
       </div>
-
-      <div class="flex flex-col gap-6 px-4 pb-12 mt-6 md:flex-row md:px-16 md:mt-12 md:pb-24" data-aos="fade-up"
-        data-aos-duration="1000">
-        <div class="w-full text-white md:w-1/2" data-aos="zoom-in" data-aos-delay="300">
-          <img src="/img/about2.png" alt="" class="w-full mx-auto md:w-auto" />
-          <p class="mt-3 text-2xl text-left font-times">
-            Healing <span class="italic">Paradise</span>
-          </p>
-          <p class="font-nunito text-[10px] mt-1 text-left">VIEW GALLERY</p>
-        </div>
-        <div class="w-full text-white md:w-1/2" data-aos="zoom-in" data-aos-delay="500">
-          <img src="/img/about1.png" alt="" class="w-full mx-auto md:w-auto" />
-          <p class="mt-3 text-2xl text-left font-times">
-            Everyday <span class="italic">Activities</span>
-          </p>
-          <p class="font-nunito text-[10px] mt-1 text-left">VIEW GALLERY</p>
-        </div>
-      </div>
+      <AboutGalery />
     </section>
   </div>
 </template>

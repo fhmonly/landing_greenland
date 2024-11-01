@@ -32,7 +32,7 @@
 </template>
 <script setup>
 const config = useRuntimeConfig();;
-const { data: sliders, status } = useFetch(`${config.public.apiUrl}/slider`, {
+const { data: sliders, status } = await useFetch(`${config.public.apiUrl}/slider`, {
   pick: ["data"],
   key: "api-slider"
 });

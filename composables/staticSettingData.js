@@ -1,7 +1,7 @@
 export const useDataSettings = () => useState('data-settings', () => null)
-export function useFetchDataSettings() {
+export async function useFetchDataSettings() {
     const config = useRuntimeConfig()
-    const { data, status, error, refresh } = useFetch(`${config.public.apiUrl}/settings`, {
+    const { data, status, error, refresh } = await useFetch(`${config.public.apiUrl}/settings`, {
         key: "api-settings",
         pick: ["data"],
     })
