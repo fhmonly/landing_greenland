@@ -1,6 +1,7 @@
 <script setup>
 const config = useRuntimeConfig()
 const route = useRoute();
+console.log(route.params, "route.params");
 
 const { data: article, status, error, refresh } =
   await useFetch(`${config.public.apiUrl}/promo?id=${route.params.promo_id}`, {
