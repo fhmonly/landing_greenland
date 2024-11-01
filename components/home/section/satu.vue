@@ -4,10 +4,9 @@
       <div class="relative flex flex-col items-start justify-between lg:flex-row mt-9">
         <div class="order-2 w-full text-left text-white lg:order-1 left-content lg:w-1/2" data-aos="fade-right">
           <h1
-            class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] mb-5 text-[#3c4f4b] font-times md:leading-[75px] leading-[40px]">
-            {{ settings.data.home1_title }}
+            class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px]  text-[#3c4f4b] font-times leading-tight pt-16 pb-5" v-html="transformNewLineToBrTag(settings.data.home1_title)">
           </h1>
-          <div class="text-black font-nunito text-[15px] md:text-start text-justify no-tailwind"
+          <div class="text-black font-nunito text-[15px] md:text-start text-justify no-tailwind leading-normal"
             v-html="settings.data.home1_content"></div>
         </div>
 
@@ -49,4 +48,5 @@
 <script setup>
 const settings = useDataSettings();
 const config = useRuntimeConfig()
+const { transformNewLineToBrTag} = useApiHelper()
 </script>
