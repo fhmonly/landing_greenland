@@ -8,10 +8,10 @@
       " class="flex flex-col justify-center" v-for="slider in sliders.data" v-bind:key="slider.id">
       <div class="pt-[64px] md:pl-20 pl-6">
         <h1
-          class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] font-medium leading-tight text-white font-times max-w-[520px]"
-          data-aos="fade-up" v-html="slider.contents"> </h1>
+          class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] font-medium leading-tight text-white font-times"
+          data-aos="fade-up" v-html="transformNewLineToBrTag(slider.contents)"> </h1>
         <div class="mt-8 text-base tracking-wide text-white no-tailwind" data-aos="fade-up" data-aos-delay="100"
-          v-html="slider.bottom_content"></div>
+          v-html="transformNewLineToBrTag(slider.bottom_content)"></div>
         <button class="flex items-center pt-5 btn-visit" data-aos="fade-up" data-aos-delay="300">
           <span class="text-xs tracking-wider text">Schedule a Visit</span>
           <span class="circle">
@@ -31,9 +31,10 @@
   </swiper-container>
 </template>
 <script setup>
-const config = useRuntimeConfig();;
+const config = useRuntimeConfig();
 const { data: sliders, status } = await useFetch(`${config.public.apiUrl}/slider`, {
   pick: ["data"],
   key: "api-slider"
 });
+const { transformNewLineToBrTag } = useApiHelper();
 </script>

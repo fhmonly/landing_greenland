@@ -11,7 +11,7 @@
             v-html="settings.data.home1_content"></div>
         </div>
 
-        <div class="order-1 p-5 lg:order-2 max-w-[520px] lg:max-w-[50%] flex mb-10 lg:mb-0 lg:ps-10">
+        <div class="order-1 p-5 lg:order-2 max-w-[520px] lg:max-w-[55%] flex mb-10 lg:mb-0 lg:ps-10">
           <div class="relative w-full pl-20 m-auto flex items-center" data-aos="fade-left">
             <img :src="`${config.public.dirUrl}/images/static/${settings?.data?.home1_image}`" alt="Image description"
               class="object-cover w-full aspect-[1.5/1] lg:aspect-square lg:h-full" />

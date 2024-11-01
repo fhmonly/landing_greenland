@@ -35,6 +35,9 @@ useHead({
     },
   ],
 });
+useSeoMeta({
+  title: "Cluster"
+});
 </script>
 <template>
   <div>
@@ -44,7 +47,7 @@ useHead({
         <h2 class="text-thin font-nunito text-[14px] text-black">
           {{ settings.data.hero_cluster_title_1 }}
         </h2>
-        <h1 class="text-size-main font-times text-[#38544c]">
+        <h1 class="text-[50px] lg:text-[55px] font-times text-[#38544c]">
           {{ settings.data.hero_cluster_info_1 }}
         </h1>
       </div>

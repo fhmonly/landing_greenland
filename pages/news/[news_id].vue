@@ -1,9 +1,4 @@
 <script setup>
-useSeoMeta({
-  titleTemplate: "",
-  title: "Articles",
-});
-
 const route = useRoute();
 const config = useRuntimeConfig()
 
@@ -13,6 +8,11 @@ const { data: article, status, error, refresh } =
   });
 
 const results = article?.value?.data
+
+useSeoMeta({
+  titleTemplate: "",
+  title: () => results.title,
+});
 </script>
 <template>
   <div>
@@ -34,7 +34,7 @@ const results = article?.value?.data
                 <span class="italic">
                   Published on: <strong>{{
                     $dayjs(results.date_input).locale("id").format("DD MMM YYYY")
-                    }}</strong>
+                  }}</strong>
                 </span>
               </div>
               <div class="mx-auto mb-8 md:mb-0">

@@ -7,28 +7,29 @@
           <div class="px-8 text-left text-white md:px-16">
             <h1
               class="font-normal leading-tight text-size-main font-times heroTitlePages text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px]"
-              data-aos="fade-up" v-html="settings.data.hero_about_content_1"></h1>
+              data-aos="fade-up" v-html="transformNewLineToBrTag(settings.data.hero_about_content_1)"></h1>
           </div>
         </div>
       </div>
     </section>
-    <section id="section2" class="bg-[#3c4f4b] pt-10 sm:pt-0 min-h-screen flex flex-col">
+    <section id="section2" class="bg-[#3c4f4b] pt-10 sm:pt-0 min-h-screen flex flex-col relative">
       <div class="flex items-center justify-center h-full grow">
         <div class="block px-16 mx-auto mb-16 md:flex">
-          <div class="w-2/4 text-white font-nunito text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]"
-            data-aos="fade-down">
+          <div class="w-2/4 text-white font-nunito text-[14px]" data-aos="fade-down">
             <span class="font-thin">{{ settings.data.about1_small_title }}</span> <br>
             <span class="font-semibold">{{ settings.data.about1_title }}</span>
           </div>
           <div class="w-3/4 mt-5 md:mt-0" data-aos="fade-up">
             <div class="text-white text-size-main font-times opacity-60 no-tailwind textSection2Tops" id="textSection2"
-              v-html="settings.data.about1_content"></div>
+              v-html="transformNewLineToBrTag(settings.data.about1_content)"></div>
           </div>
         </div>
       </div>
-      <h1 class="inset-x-0 pl-2 mt-auto gradient-text font-times" data-aos="slide-up">
-        Greenland
-      </h1>
+      <div class="flex h-[80px] overflow-hidden items-center mt-auto absolute bottom-0">
+        <h1 class="inset-x-0 gradient-text font-times" data-aos="slide-up">
+          Greenland
+        </h1>
+      </div>
     </section>
 
     <section id="section3" class="bg-center bg-cover" data-aos="fade-up"
@@ -43,8 +44,7 @@
           <div class="mt-5 md:mt-0 md:w-3/4 lg:pr-[6rem]">
             <h1 class="text-size-main text-main font-times" id="textSection2" data-aos="zoom-in"
               v-html="settings.data.about2_title"></h1>
-            <div
-              class="text-black md:w-[90%] text-justify font-nunito mt-8 no-tailwind text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]"
+            <div class="text-black md:w-[90%] text-justify font-nunito mt-8 no-tailwind text-[16px] lg:text-[17px]"
               data-aos="fade-up" v-html="settings.data.about2_content">
             </div>
           </div>
@@ -116,12 +116,9 @@
 <script setup>
 const settings = useDataSettings();
 const config = useRuntimeConfig();
-const { showImageGalery } = useImageGalery()
-onMounted(() => {
-  const heroTitlePages = document.querySelector('.heroTitlePages');
-  heroTitlePages.innerHTML = heroTitlePages.innerHTML.replace(/(?:\r\n|\r|\n)/g, '<br>');
+const { transformNewLineToBrTag } = useApiHelper();
 
-  const topTitlePage2 = document.querySelector('.textSection2Tops');
-  topTitlePage2.innerHTML = topTitlePage2.innerHTML.replace(/(?:\r\n|\r|\n)/g, '<br>');
+useSeoMeta({
+  title: "About",
 });
 </script>

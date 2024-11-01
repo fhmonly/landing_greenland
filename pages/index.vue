@@ -10,6 +10,7 @@
   </div>
 </template>
 <script setup>
+const settings = useDataSettings()
 useHead({
   link: [
     {
@@ -22,6 +23,9 @@ useHead({
       src: "https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js",
     },
   ],
+});
+useSeoMeta({
+  title: () => settings.value?.data.default_meta_title,
 });
 </script>
 <style scoped>
