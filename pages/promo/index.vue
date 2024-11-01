@@ -6,7 +6,7 @@
         <h2 class="text-thin font-nunito text-[14px] text-black">
           {{ settings.data.hero_promo_title_1 }}
         </h2>
-        <h1 class="text-size-main font-times text-[#38544c]">
+        <h1 class="text-[50px] lg:text-[55px] font-times text-[#38544c]">
           {{ settings.data.hero_promo_info_1 }}
         </h1>
       </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="mt-auto">
               <hr class="my-3 border-[#BFCEC9FF]" />
-              <NuxtLink :to="`/promo/${promo.id}`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
+              <NuxtLink :to="`/promo/${parseInt(promo.id)}#`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
             </div>
           </div>
         </div>
@@ -66,5 +66,8 @@ useHead({
       `,
     },
   ],
+});
+useSeoMeta({
+  title: "Promo",
 });
 </script>

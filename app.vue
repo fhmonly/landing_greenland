@@ -55,6 +55,7 @@ useServerSeoMeta({
   },
   description: () => settings.value?.data.default_meta_description,
   keywords: () => settings.value?.data.default_meta_keywords,
+  title: () => settings.value?.data.default_meta_title,
 });
 useHead({
   link: [

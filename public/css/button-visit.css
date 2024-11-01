@@ -37,12 +37,9 @@
   background-color: white;
 }
 
-.btn-visit:hover .circle {
-  background-color: white;
-}
-
 .btn-visit:hover .arrow {
   color: black;
+  left: 5px;
 }
 
 .btn-visit {
@@ -151,6 +148,7 @@
 }
 .btn-visit-green:hover .arrow {
   left: 5px;
+  color: #fff;
 }
 .btn-visit-green:hover .circle {
   background-color: #38544c;
