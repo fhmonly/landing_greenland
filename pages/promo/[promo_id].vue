@@ -38,7 +38,7 @@ useSeoMeta({
                 </span>
               </div>
               <div class="mx-auto mb-8 md:mb-0">
-                <img :src="`${config.public.dirUrl}/${results.image}`" alt="Gambar Utama Artikel"
+                <NuxtImg format="webp" :src="`/greenland/${results.image}`" alt="Gambar Utama Artikel"
                   class="object-cover w-full h-auto" />
               </div>
 

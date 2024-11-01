@@ -10,8 +10,9 @@
 
     <div class="flex flex-wrap items-center justify-center gap-4 mx-auto">
       <div class="relative group w-full sm:max-w-[48%] lg:max-w-[23%]" data-aos="zoom-in"
-        v-for="cluster in clusters.data.data" :key="cluster.id">
-        <img :src="`${config.public.dirUrl}/${cluster.image}`" alt="Photo 1" class="object-cover w-full h-auto" />
+        v-for="cluster in clusters?.data?.data.slice(0, 4)" :key="cluster.id">
+        <LazyNuxtImg format="webp" :src="`/greenland/${cluster.image}`" alt="Photo 1"
+          class="object-cover w-full h-auto" />
         <div
           class="absolute inset-0 flex flex-col justify-end p-5 text-white transition-all duration-300 bg-black bg-opacity-20 group-hover:bg-white group-hover:bg-opacity-50">
           <h3 class="text-4xl font-times capitalize group-hover:text-[#38544c] transition-all duration-300 mb-3">

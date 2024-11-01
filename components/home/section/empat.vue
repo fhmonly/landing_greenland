@@ -2,14 +2,15 @@
   <section id="section5" class="md:py-16 py-12 bg-[#f5f4ed] w-full flex justify-center flex-col">
     <div class="py-2 mb-10 text-center md:py-16">
       <h2 class="text-base text-black font-nunito">{{ settings.data.home4_small_title }}</h2>
-      <h1 class="md:px-0 px-2 text-[50px] lg:text-[55px] xl:text-[60px] leading-[1.1] 2xl:text-[65px] mt-2 font-times text-[#38544c]">
+      <h1
+        class="md:px-0 px-2 text-[50px] lg:text-[55px] xl:text-[60px] leading-[1.1] 2xl:text-[65px] mt-2 font-times text-[#38544c]">
         {{ settings.data.home4_title }}
       </h1>
     </div>
     <div class="flex flex-wrap items-stretch justify-center w-full gap-4 px-2 pb-4">
       <div
         class="bg-white text-[#38544c] w-full max-w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
-        data-aos="fade-up" data-aos-duration="300" v-for="item in news.data.data.slice(0, 3)" :key="item.blog_id">
+        data-aos="fade-up" data-aos-duration="300" v-for="item in news?.data?.data.slice(0, 3)" :key="item.blog_id">
         <div>
           <p class="text-[10px] font-semibold">NEWSi - {{ $dayjs(item.date_input).locale("id").fromNow() }}</p>
           <h3 class="text-xl font-base leading-[1.1] mt-2 line-clamp-3">

@@ -18,5 +18,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['nuxt-aos', '@nuxtjs/tailwindcss', '@nuxt/icon', 'dayjs-nuxt'],
+  modules: ['nuxt-aos', '@nuxtjs/tailwindcss', '@nuxt/icon', 'dayjs-nuxt', '@nuxt/image'],
+  image: {
+    domains: [
+      'dev-markdesign.my.id'
+    ],
+    alias: {
+      greenland: 'https://dev-markdesign.my.id/greenland/admin'
+    }
+  }
 })

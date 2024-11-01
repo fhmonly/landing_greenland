@@ -2,8 +2,8 @@
     <div class="flex flex-col gap-6 px-4 pb-12 mt-6 md:flex-row md:px-16 md:mt-12 md:pb-24" data-aos="fade-up"
         data-aos-duration="1000">
         <div class="w-full text-white md:w-1/2" data-aos="zoom-in" data-aos-delay="300"
-            v-for="(gallery, index) in dataGalleries.data.data" :key="gallery.gallery_id">
-            <img :src="`${config.public.dirUrl}/${gallery.image}`" :alt="`gambar ${gallery.title}`"
+            v-for="(gallery, index) in dataGalleries?.data?.data.slice(0, 2)" :key="gallery.gallery_id">
+            <LazyNuxtImg format="webp" :src="`/greenland/${gallery.image}`" :alt="`gambar ${gallery.title}`"
                 class="w-full mx-auto md:w-auto" />
             <p class="mt-3 text-2xl text-left font-times">
                 {{ gallery.title }}

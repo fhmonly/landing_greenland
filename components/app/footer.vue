@@ -1,38 +1,17 @@
 <template>
-  <footer
-    id="footer"
-    class="flex flex-col items-center justify-center pt-10 pb-12 bg-[#3c4f4b] text-white"
-  >
+  <footer id="footer" class="flex flex-col items-center justify-center pt-10 pb-12 bg-[#3c4f4b] text-white">
     <div class="text-center w-[90%]">
-      <img
-        alt="Greenland logo"
-        class="mx-auto mb-10"
-        src="/img/footer-logo.png"
-        width="145px"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-      />
+      <NuxtImg alt="Greenland logo" class="mx-auto mb-10" src="/img/footer-logo.png" data-aos="zoom-in"
+        data-aos-delay="200" width="145" format="webp" />
       <p class="text-[10px] font-bold" data-aos="fade-up" data-aos-delay="300">
         CONTACT YOUR PERSONAL AGENT:
       </p>
-      <p
-        class="text-[15px] font-bold mb-8"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        <a
-          target="_blank"
-           :href="`https://wa.me/${staticData?.data?.contact_wa}`"
-          style="text-decoration: none"
-        >
-        {{ settings.data.contact_wa_label }}: {{ settings.data.contact_wa }}
+      <p class="text-[15px] font-bold mb-8" data-aos="fade-up" data-aos-delay="400">
+        <a target="_blank" :href="`https://wa.me/${staticData?.data?.contact_wa}`" style="text-decoration: none">
+          {{ settings.data.contact_wa_label }}: {{ settings.data.contact_wa }}
         </a>
       </p>
-      <p
-        class="max-w-lg text-[10px] mx-auto mb-8 tracking-wider font-light"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
+      <p class="max-w-lg text-[10px] mx-auto mb-8 tracking-wider font-light" data-aos="fade-up" data-aos-delay="500">
         GreenLand di Surabaya Barat menghadirkan atmosfer hunian yang natural
         dan
         <br />
