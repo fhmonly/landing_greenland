@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
   <section id="section4" class="py-4 bg-blend md:py-16">
     <div class="py-12 text-center">
-      <h1 class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] text-[#3c4f4b] font-times mb-2 md:px-0 px-12"
+      <h1 class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] text-[#3c4f4b] font-times mb-2 md:px-0 px-12 leading-[1.1]"
         data-aos="fade-down">
         {{ settings.data.home3_title }}
       </h1>
@@ -45,7 +45,7 @@ onMounted(() => {
         More GreenLand Visual Tour
       </h2>
       <p
-        class="text-black mt-4 md:w-[48%] w-full text-center md:px-0 px-5 mx-auto md:text-[15px] text-xs leading-[20px] tracking-wider">
+        class="text-black mt-4 md:w-[48%] w-full text-center md:px-0 px-5 mx-auto md:text-[15px] text-xs leading-[1] tracking-wider">
         {{ settings.data.home3_content }}
       </p>
       <div class="grid justify-center gap-6 mt-10 md:flex place-items-stretch md:mt-16 md:gap-24">

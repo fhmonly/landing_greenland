@@ -1,6 +1,6 @@
 <template>
   <section id="section3" class="bg-[#f5f4ed]">
-    <h1 class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] text-[#3c4f4b] font-times relative text-center"
+    <h1 class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] text-[#3c4f4b] font-times relative text-center"
       data-aos="fade-up">
       {{ settings.data.home2_title }}
     </h1>

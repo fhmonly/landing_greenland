@@ -6,9 +6,9 @@
         background-size: cover;
         background-position: center;`
       " class="flex flex-col justify-center" v-for="slider in sliders.data" v-bind:key="slider.id">
-      <div class="pt-[64px] md:pl-20 pl-6">
+      <div class="pt-[64px] md:pl-20 pl-6 ">
         <h1
-          class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] font-medium leading-tight text-white font-times"
+          class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] font-medium leading-[1.1] text-white font-times"
           data-aos="fade-up" v-html="transformNewLineToBrTag(slider.contents)"> </h1>
         <div class="mt-8 text-base tracking-wide text-white no-tailwind" data-aos="fade-up" data-aos-delay="100"
           v-html="transformNewLineToBrTag(slider.bottom_content)"></div>

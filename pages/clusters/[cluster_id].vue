@@ -50,7 +50,7 @@ useSeoMeta({
         </h1>
       </div>
 
-      <div class="flex flex-wrap gap-8 px-16 pt-12">
+      <div class="flex flex-wrap gap-8 px-6 sm:px-16 pt-12">
         <div class="md:w-[48%] w-full bg-[#38544c] bg-center bg-no-repeat bg-fixed h-[400px] flex flex-col"
           data-aos="fade-down" v-for="(facade, index) in cluster.data.facade" :key="facade.id"
           :style="`background-image:url('${config.public.dirUrl}/${facade.image}')`">
@@ -72,7 +72,7 @@ useSeoMeta({
     <section id="section1" class="bg-[#F8F4EC]">
       <div class="flex-row justify-between block px-16 pt-10 md:flex text-[16px] lg:text-[17px]">
         <div class="w-full md:w-3/4">
-          <p class="font-bold text-[#38544c] pb-6 text-[17px] lg:text-[20px]" data-aos="fade-up">
+          <p class="font-bold text-[#38544c] md:pb-6 pb-0 text-[17px] lg:text-[20px]" data-aos="fade-up">
             <span>{{ cluster.data.name }}</span><span class="font-thin"> CONCEPT</span>
           </p>
           <div class="md:w-[80%] w-full font-[490] no-tailwind" data-aos="fade-up" v-html="cluster.data.contents"></div>
@@ -86,14 +86,14 @@ useSeoMeta({
               <a :href="`${config.public.dirUrl}/${cluster.data.plan_map}`" target="_blank"
                 class="flex items-center justify-center gap-2">
                 <IconBiFiletypePdf width="18" height="18" />
-                Garbera Plan Map
+                {{cluster.data.name}} Plan Map
               </a>
             </li>
             <li class="flex">
               <a :href="`${config.public.dirUrl}/${cluster.data.floor_map}`" target="_blank"
                 class="flex items-center justify-center gap-2">
                 <IconBiFiletypePdf width="18" height="18" />
-                Garbera Floor Map
+                {{cluster.data.name}} Floor Map
               </a>
             </li>
           </ul>

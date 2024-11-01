@@ -6,7 +6,7 @@
         <h2 class="text-thin font-nunito text-[14px] text-black">
           {{ settings.data.hero_promo_title_1 }}
         </h2>
-        <h1 class="text-[50px] lg:text-[55px] font-times text-[#38544c]">
+        <h1 class="text-[1.7rem] sm:text-[50px] lg:text-[55px] font-times text-[#38544c]">
           {{ settings.data.hero_promo_info_1 }}
         </h1>
       </div>
@@ -20,7 +20,7 @@
             data-aos="fade-up" data-aos-duration="300" v-for="promo in promos.data.data" :key="promo">
             <div>
               <p class="text-[10px] font-semibold">PROMO - {{ $dayjs(promo.date_input).locale("id").fromNow() }}</p>
-              <h3 class="text-xl font-base leading-[30px] mt-2">
+              <h3 class="text-xl font-base leading-[1.1] mt-2">
                 {{ promo.title }}
               </h3>
             </div>

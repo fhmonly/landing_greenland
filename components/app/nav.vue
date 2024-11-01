@@ -6,7 +6,7 @@
     <nav class="flex items-center justify-between">
       <NuxtLink to="/" class="flex items-center pl-6 md:pl-12">
         <img src="/img/logo.png" alt="Logo" class="h-10 mr-5" />
-        <span class="text-white font-light text-lg font-times tracking-[1px]">
+        <span class="text-white font-light text-lg font-times tracking-[1px] hidden mobile:inline-block">
           G R E E N L A N D
         </span>
       </NuxtLink>

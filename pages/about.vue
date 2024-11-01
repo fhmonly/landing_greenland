@@ -6,15 +6,15 @@
         <div class="flex items-center justify-start flex-grow">
           <div class="px-8 text-left text-white md:px-16">
             <h1
-              class="font-normal leading-tight text-size-main font-times heroTitlePages text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px]"
+              class="font-normal leading-tight text-size-main font-times heroTitlePages text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px]"
               data-aos="fade-up" v-html="transformNewLineToBrTag(settings.data.hero_about_content_1)"></h1>
           </div>
         </div>
       </div>
     </section>
     <section id="section2" class="bg-[#3c4f4b] pt-10 sm:pt-0 min-h-screen flex flex-col relative">
-      <div class="flex items-center justify-center h-full grow">
-        <div class="block px-16 mx-auto mb-16 md:flex">
+      <div class="flex items-center justify-center h-full grow mb-[80px] md:mb-0">
+        <div class="block px-6 md:px-16 mx-auto mb-16 md:flex">
           <div class="w-2/4 text-white font-nunito text-[14px]" data-aos="fade-down">
             <span class="font-thin">{{ settings.data.about1_small_title }}</span> <br>
             <span class="font-semibold">{{ settings.data.about1_title }}</span>
@@ -25,11 +25,9 @@
           </div>
         </div>
       </div>
-      <div class="flex h-[80px] overflow-hidden items-center mt-auto absolute bottom-0">
-        <h1 class="inset-x-0 gradient-text font-times" data-aos="slide-up">
-          Greenland
-        </h1>
-      </div>
+      <h1 class="inset-x-0 gradient-text lg:text-[115px] text-[70px] font-times mt-auto absolute bottom-0 leading-[.9] hidden mobile:block" data-aos="slide-up">
+        Greenland
+      </h1> 
     </section>
 
     <section id="section3" class="bg-center bg-cover" data-aos="fade-up"
@@ -77,8 +75,6 @@
 </template>
 <style scoped>
 .gradient-text {
-line-height: 75px;
-  font-size: 115px;
   background: linear-gradient(to top,
     rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.2),
@@ -102,10 +98,6 @@ line-height: 75px;
 }
 
 @media (max-width: 768px) {
-  .gradient-text {
-    font-size: 90px;
-  }
-
   #textSection2 br {
     display: none;
   }

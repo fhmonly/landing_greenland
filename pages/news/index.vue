@@ -6,7 +6,7 @@
         <h2 class="text-thin font-nunito text-[14px] text-black">
           {{ settings.data.hero_news_title_1 }}
         </h2>
-        <h1 class="text-[50px] lg:text-[55px] font-times text-[#38544c]">
+        <h1 class="text-[1.7rem] sm:text-[50px] lg:text-[55px] font-times text-[#38544c]">
           {{ settings.data.hero_news_info_1 }}
         </h1>
       </div>
@@ -19,7 +19,7 @@
           data-aos="fade-up" data-aos-duration="300" v-for="item in news.data.data" :key="item.blog_id">
           <div>
             <p class="text-[10px] font-semibold">NEWS - {{ $dayjs(item.date_input).locale("id").fromNow() }}</p>
-            <h3 class="text-xl font-base leading-[30px] mt-2 line-clamp-3">
+            <h3 class="text-xl font-base leading-[1.1] mt-2 line-clamp-3">
               {{ item.title }}
             </h3>
           </div>

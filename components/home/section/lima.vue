@@ -5,11 +5,11 @@
         height="200" src="/img/contenTPromo.jpg" width="640" data-aos="fade-up" />
     </div>
     <div
-      class="flex flex-col items-start justify-center p-5 md:p-8 lg:p-16 text-size-main shrink-0 w-full lg:max-w-[40%] xl:max-w-[45%]">
+      class="flex flex-col items-start justify-center p-5 md:p-8 lg:p-16 text-size-main shrink-0 w-full lg:max-w-[40%] xl:max-w-[45%] py-10">
       <span class="text-base font-normal text-[#38544c]">
         PROMO &amp; OFFERS
       </span>
-      <span class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px] py-6 font-times text-[#38544c]">
+      <span class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] py-6 font-times text-[#38544c]">
         Your green home <br />
         awaits
       </span>

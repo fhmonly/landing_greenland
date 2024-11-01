@@ -60,6 +60,10 @@ useServerSeoMeta({
 useHead({
   link: [
     {
+      rel: "stylesheet",
+      href: "/css/button-visit.css",
+    },
+    {
       href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap",
       rel: "stylesheet",
     },

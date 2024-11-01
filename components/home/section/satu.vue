@@ -4,23 +4,11 @@
       <div class="relative flex flex-col items-start justify-between lg:flex-row mt-9">
         <div class="order-2 w-full text-left text-white lg:order-1 left-content lg:w-1/2" data-aos="fade-right">
           <h1
-            class="text-[50px] lg:text-[55px] xl:text-[60px] 2xl:text-[65px]  text-[#3c4f4b] font-times leading-[1.1] pt-16 pb-5" v-html="transformNewLineToBrTag(settings.data.home1_title)">
+            class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px]  text-[#3c4f4b] font-times leading-[1.1] pt-16 pb-5" v-html="transformNewLineToBrTag(settings.data.home1_title)">
           </h1>
           <div class="text-black font-nunito text-[17px] md:text-start text-justify no-tailwind leading-[1.6]"
             v-html="settings.data.home1_content"></div>
-        </div>
-
-        <div class="order-1 p-5 lg:order-2 max-w-[520px] lg:max-w-[55%] flex mb-10 lg:mb-0 lg:ps-10">
-          <div class="relative w-full pl-20 m-auto flex items-center" data-aos="fade-left">
-            <img :src="`${config.public.dirUrl}/images/static/${settings?.data?.home1_image}`" alt="Image description"
-              class="object-cover w-full aspect-square lg:h-full" />
-            <h3 class="absolute left-0 text-3xl font-bold text-white font-times max-w-[230px] text-right">
-              {{ settings.data.home1_small_title }}
-            </h3>
-          </div>
-        </div>
-      </div>
-      <button class="flex items-center pt-0 btn-visit-green md:pt-5" data-aos="fade-up" data-aos-delay="300">
+            <button class="flex items-center pt-0 btn-visit-green md:pt-5" data-aos="fade-up" data-aos-delay="300">
         <span class="text-xs tracking-wider text">MORE ABOUT US</span>
         <span class="circle">
           <span class="arrow">
@@ -34,6 +22,17 @@
           </span>
         </span>
       </button>
+        </div>
+
+        <div class="order-1 lg:p-5 lg:order-2 max-w-[520px] lg:max-w-[55%] flex lg:mb-0 lg:ps-10">
+          <div class="relative w-full lg:pl-20 m-auto flex items-center" data-aos="fade-left">
+            <img :src="`${config.public.dirUrl}/images/static/${settings?.data?.home1_image}`" alt="Image description"
+              class="object-cover w-full aspect-square lg:h-full" />
+            <h3 class="absolute left-0 hidden lg:block text-3xl font-bold text-white font-times max-w-[230px] text-right" v-html="transformNewLineToBrTag(settings.data.home1_small_title)">
+            </h3>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>

@@ -47,13 +47,13 @@ useSeoMeta({
         <h2 class="text-thin font-nunito text-[14px] text-black">
           {{ settings.data.hero_cluster_title_1 }}
         </h2>
-        <h1 class="text-[50px] lg:text-[55px] font-times text-[#38544c]">
+        <h1 class="text-[1.7rem] sm:text-[50px] lg:text-[55px] font-times text-[#38544c]">
           {{ settings.data.hero_cluster_info_1 }}
         </h1>
       </div>
     </section>
 
-    <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-6 md:pt-0">
+    <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-6 md:pt-0 px-6">
       <div class="flex flex-wrap items-center justify-center gap-4 mx-auto">
         <div class="relative group w-full sm:max-w-[48%] lg:max-w-[23%]" data-aos="zoom-in"
           v-for="cluster in clusters.data.data" :key="cluster.id">

@@ -27,7 +27,7 @@ useSeoMeta({
     </section>
     <section id="section1" class="bg-[#F8F4EC] w-full flex justify-center pt-12 md:pt-0">
       <div class="w-full max-w-5xl mx-auto">
-        <div class="flex items-center justify-center w-full px-2 pb-4">
+        <div class="flex items-center justify-center w-full px-5 pb-4">
           <div class="flex flex-col md:flex-row">
             <div class="mx-auto">
               <div class="flex items-center justify-between mb-6 text-sm text-gray-500 font-nunito">
@@ -45,15 +45,24 @@ useSeoMeta({
               <div class="py-8 mx-auto text-sm leading-relaxed text-justify text-gray-700 font-nunito"
                 v-html="results.content">
               </div>
-              <div class="py-3"></div>
-              <div class="flex justify-center">
-                <NuxtLink to="/news" class="text-[15px] font-bold">
-                  <Icon name="material-symbols:arrow-back-ios-new"
-                    style="color: black; position: relative; top: 2px;" />
-                  Back to News
+
+              <div class="pt-8 pb-10 text-center">
+                <NuxtLink to="/news" class="flex-block items-center pt-5 mx-auto btn-visit-black" data-aos="fade-up"
+                  data-aos-delay="300">
+                  <span class="text-xs tracking-wider text">BACK TO NEWS</span>
+                  <span class="circle">
+                    <span class="arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                        class="bi bi-arrow-right" viewBox="0 0 24 16">
+                        <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                          stroke="currentColor" stroke-width="2" />
+                        <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                      </svg>
+                    </span>
+                  </span>
                 </NuxtLink>
               </div>
-              <div class="py-4"></div>
             </div>
           </div>
         </div>
