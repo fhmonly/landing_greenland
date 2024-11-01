@@ -26,7 +26,7 @@
             </div>
             <div class="mt-auto">
               <hr class="my-3 border-[#BFCEC9FF]" />
-              <NuxtLink :to="`/promo/${promo.id}`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
+              <NuxtLink :to="`/promo/${parseInt(promo.id)}#`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
             </div>
           </div>
         </div>
