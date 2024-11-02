@@ -1,8 +1,8 @@
 <template>
   <section id="section6" class="flex flex-col bg-white lg:flex-row min-h-[75vh]">
     <div class="px-5 pt-5 grow md:px-0 md:pt-0">
-      <img alt="Entrance to Green Land with palm trees and cars on the road" class="object-cover w-full h-full"
-        height="200" src="/img/contenTPromo.jpg" width="640" data-aos="fade-up" />
+      <NuxtImg format="webp" alt="Entrance to Green Land with palm trees and cars on the road"
+        class="object-cover w-full h-full" src="/img/contenTPromo.jpg" width="640" data-aos="fade-up" />
     </div>
     <div
       class="flex flex-col items-start justify-center p-5 md:p-8 lg:p-16 text-size-main shrink-0 w-full lg:max-w-[40%] xl:max-w-[45%] py-10">

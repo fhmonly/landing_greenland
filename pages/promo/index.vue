@@ -14,13 +14,13 @@
 
     <section id="section1" class="bg-[#F8F4EC] w-full justify-center md:pt-12 pt-8 pb-24">
       <div class="w-full">
-        <div class="flex flex-wrap items-center justify-center w-full gap-4 px-2 pb-4">
+        <div class="flex flex-wrap items-stretch justify-center w-full gap-4 px-2 pb-4">
           <div
             class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
-            data-aos="fade-up" data-aos-duration="300" v-for="promo in promos.data.data" :key="promo">
+            data-aos="fade-up" data-aos-duration="300" v-for="promo in promos?.data?.data" :key="promo">
             <div>
               <p class="text-[10px] font-semibold">PROMO - {{ $dayjs(promo.date_input).locale("id").fromNow() }}</p>
-              <h3 class="text-xl font-base leading-[1.1] mt-2">
+              <h3 class="text-xl font-base leading-[1.1] mt-2 line-clamp-3">
                 {{ promo.title }}
               </h3>
             </div>

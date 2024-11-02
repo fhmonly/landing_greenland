@@ -4,31 +4,35 @@
       <div class="relative flex flex-col items-start justify-between lg:flex-row mt-9">
         <div class="order-2 w-full text-left text-white lg:order-1 left-content lg:w-1/2" data-aos="fade-right">
           <h1
-            class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px]  text-[#3c4f4b] font-times leading-[1.1] pt-16 pb-5" v-html="transformNewLineToBrTag(settings.data.home1_title)">
+            class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px]  text-[#3c4f4b] font-times leading-[1.1] pt-16 pb-5"
+            v-html="transformNewLineToBrTag({ text: settings.data.home1_title, className: 'hidden lg:block' })">
           </h1>
           <div class="text-black font-nunito text-[17px] md:text-start text-justify no-tailwind leading-[1.6]"
             v-html="settings.data.home1_content"></div>
-            <button class="flex items-center pt-0 btn-visit-green md:pt-5" data-aos="fade-up" data-aos-delay="300">
-        <span class="text-xs tracking-wider text">MORE ABOUT US</span>
-        <span class="circle">
-          <span class="arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-arrow-right"
-              viewBox="0 0 24 16">
-              <path fill-rule="evenodd"
-                d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                stroke="currentColor" stroke-width="2" />
-              <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
-            </svg>
-          </span>
-        </span>
-      </button>
+          <button class="flex items-center pt-0 btn-visit-green md:pt-5" data-aos="fade-up" data-aos-delay="300">
+            <span class="text-xs tracking-wider text">MORE ABOUT US</span>
+            <span class="circle">
+              <span class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 24 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    stroke="currentColor" stroke-width="2" />
+                  <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+          </button>
         </div>
 
         <div class="order-1 lg:p-5 lg:order-2 max-w-[520px] lg:max-w-[55%] flex lg:mb-0 lg:ps-10">
-          <div class="relative w-full lg:pl-20 m-auto flex items-center" data-aos="fade-left">
-            <img :src="`${config.public.dirUrl}/images/static/${settings?.data?.home1_image}`" alt="Image description"
-              class="object-cover w-full aspect-square lg:h-full" />
-            <h3 class="absolute left-0 hidden lg:block text-3xl font-bold text-white font-times max-w-[230px] text-right" v-html="transformNewLineToBrTag(settings.data.home1_small_title)">
+          <div class="relative flex items-center w-full m-auto lg:pl-20" data-aos="fade-left">
+            <NuxtImg format="webp" :src="`/greenland/images/static/${settings?.data?.home1_image}`"
+              alt="Image description" class="object-cover w-full aspect-square lg:h-full"
+              sizes="360px sm:576px md:50vw" />
+            <h3
+              class="absolute left-0 hidden lg:block text-3xl font-bold text-white font-times max-w-[230px] text-right"
+              v-html="transformNewLineToBrTag({ text: settings.data.home1_small_title, className: 'hidden md:block' })">
             </h3>
           </div>
         </div>
@@ -47,5 +51,5 @@
 <script setup>
 const settings = useDataSettings();
 const config = useRuntimeConfig()
-const { transformNewLineToBrTag} = useApiHelper()
+const { transformNewLineToBrTag } = useApiHelper()
 </script>
