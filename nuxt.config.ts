@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     domains: [
       'dev-markdesign.my.id'
     ],
+    quality: 75,
     alias: {
       greenland: 'https://dev-markdesign.my.id/greenland/admin'
     }
