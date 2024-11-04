@@ -39,7 +39,7 @@ useSeoMeta({
 });
 </script>
 <template>
-  <div>
+  <main>
     <section id="section0" class="items-end justify-center block w-full bg-center bg-cover bg-blend h-fit">
       <div class="pt-48 text-center" data-aos="slide-up">
         <h2 class="text-thin font-nunito text-[14px] text-black">
@@ -50,11 +50,11 @@ useSeoMeta({
         </h1>
       </div>
 
-      <div class="flex flex-wrap gap-8 px-6 sm:px-16 pt-12">
+      <div class="flex flex-wrap gap-8 px-6 pt-12 md:px-12">
         <div class="md:w-[48%] w-full bg-[#38544c] bg-center bg-no-repeat bg-fixed h-[400px] flex flex-col"
           data-aos="fade-down" v-for="(facade, index) in cluster.data.facade" :key="facade.id"
           :style="`background-image:url('${config.public.dirUrl}/${facade.image}')`">
-          <div class="flex items-center justify-between px-4 mt-auto pb-3 text-white md:pt-64">
+          <div class="flex items-center justify-between px-4 pb-3 mt-auto text-white md:pt-64">
             <span class="text-lg font-times">{{ facade.name }}</span>
             <button type="button" class="text-[15px] lg:text-[16px] font-nunito" @click="showImageGalery({
               galeries: cluster?.data?.facade.map(f => {
@@ -70,7 +70,7 @@ useSeoMeta({
       </div>
     </section>
     <section id="section1" class="bg-[#F8F4EC]">
-      <div class="flex-row justify-between block px-16 pt-10 md:flex text-[16px] lg:text-[17px]">
+      <div class="flex-row justify-between block px-6 md:px-12 pt-10 md:flex text-[16px] lg:text-[17px]">
         <div class="w-full md:w-3/4">
           <p class="font-bold text-[#38544c] md:pb-6 pb-0 text-[17px] lg:text-[20px]" data-aos="fade-up">
             <span>{{ cluster.data.name }}</span><span class="font-thin"> CONCEPT</span>
@@ -86,14 +86,14 @@ useSeoMeta({
               <a :href="`${config.public.dirUrl}/${cluster.data.plan_map}`" target="_blank"
                 class="flex items-center justify-center gap-2">
                 <IconBiFiletypePdf width="18" height="18" />
-                {{cluster.data.name}} Plan Map
+                {{ cluster.data.name }} Plan Map
               </a>
             </li>
             <li class="flex">
               <a :href="`${config.public.dirUrl}/${cluster.data.floor_map}`" target="_blank"
                 class="flex items-center justify-center gap-2">
                 <IconBiFiletypePdf width="18" height="18" />
-                {{cluster.data.name}} Floor Map
+                {{ cluster.data.name }} Floor Map
               </a>
             </li>
           </ul>
@@ -114,5 +114,5 @@ useSeoMeta({
         </div>
       </div>
     </section>
-  </div>
+  </main>
 </template>

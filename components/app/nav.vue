@@ -2,7 +2,8 @@
   <header id="navbar" class="fixed top-0 left-0 w-full z-50 green-effect bg-[#2c3c34a1] transition-colors duration-300">
     <nav class="flex items-center justify-between">
       <NuxtLink to="/" class="flex items-center pl-6 md:pl-12">
-        <NuxtImg format="webp" src="/img/logo.png" alt="Logo" class="h-10 mr-5" width="44" height="44" />
+        <NuxtImg :placeholder="[50, 25, 75, 5]" format="webp" src="/img/logo.png" alt="Logo" class="h-10 mr-5"
+          width="44" height="44" />
         <span class="text-white font-light text-lg font-times tracking-[1px] hidden mobile:inline-block">
           G R E E N L A N D
         </span>
@@ -18,7 +19,8 @@
       class="fixed top-0 right-0 h-full w-64 bg-[#3c4f4b] transform transition-transform duration-300 ease-in-out">
       <div class="flex items-center justify-between px-6 py-4 text-sm text-white font-times">
         <p class="flex items-center">
-          <NuxtImg format="webp" src="/img/logo.png" alt="Logo" class="h-8 pe-3" /> G R E E N L A
+          <NuxtImg :placeholder="[50, 25, 75, 5]" format="webp" src="/img/logo.png" alt="Logo" class="h-8 pe-3" /> G R E
+          E N L A
           N D
         </p>
         <label for="menu-toggle" class="block text-2xl text-white cursor-pointer focus:outline-none aspect-square">

@@ -19,12 +19,14 @@
         </div>
         <div class="mt-auto">
           <hr class="my-3 border-[#BFCEC9FF]" />
-          <NuxtLink :to="`/news/${item.blog_id}`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
+          <NuxtLink :to="`/news/${item.blog_id}-${createSlug(item.title)}`" class="mb-4 text-[10px] font-bold">READ MORE
+          </NuxtLink>
         </div>
       </div>
     </div>
-    <div class="mt-8 mb-8 text-center">
-      <button class="flex items-center pt-5 mx-auto btn-visit-black" data-aos="fade-up" data-aos-delay="300">
+    <div class="flex items-center justify-center mt-8 mb-8 text-center">
+      <NuxtLink to="/news" class="flex items-center pt-5 mx-auto btn-visit-black gap-x-2" data-aos="fade-up"
+        data-aos-delay="300">
         <span class="text-xs tracking-wider text">VIEW ALL</span>
         <span class="circle">
           <span class="arrow">
@@ -37,7 +39,7 @@
             </svg>
           </span>
         </span>
-      </button>
+      </NuxtLink>
     </div>
   </section>
 </template>
@@ -49,4 +51,5 @@ const { data: news, status, error, refresh } = await useFetch(`${config.public.a
   pick: ["data"],
   key: "api-news-blogs"
 });
+const { createSlug } = useApiHelper();
 </script>

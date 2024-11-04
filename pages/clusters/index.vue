@@ -38,9 +38,11 @@ useHead({
 useSeoMeta({
   title: "Cluster"
 });
+
+const { createSlug } = useApiHelper();
 </script>
 <template>
-  <div>
+  <main>
     <section id="section0"
       class="bg-cover bg-center w-full bg-blend md:h-[400px] h-[200px] flex justify-center items-end md:pb-[5rem] pb-6">
       <div class="text-center">
@@ -53,11 +55,10 @@ useSeoMeta({
       </div>
     </section>
 
-    <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-6 md:pt-0 px-6">
-      <div class="flex flex-wrap items-center justify-center gap-4 mx-auto">
-        <div class="relative group w-full sm:max-w-[48%] lg:max-w-[23%]" data-aos="zoom-in"
-          v-for="cluster in clusters.data.data" :key="cluster.id">
-          <LazyNuxtImg format="webp" :src="`/greenland/${cluster.image}`" alt="Photo 1"
+    <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-6 md:pt-0 px-6 md:px-12">
+      <div class="grid grid-cols-1 gap-4 mx-auto tablet:grid-cols-2 lg:grid-cols-4">
+        <div class="relative w-full group" data-aos="zoom-in" v-for="cluster in clusters.data.data" :key="cluster.id">
+          <LazyNuxtImg :placeholder="[50, 25, 75, 5]" format="webp" :src="`/greenland/${cluster.image}`" alt="Photo 1"
             class="object-cover w-full h-auto" />
           <div
             class="absolute inset-0 flex flex-col justify-end p-5 text-white transition-all duration-300 bg-black bg-opacity-20 group-hover:bg-white group-hover:bg-opacity-50">
@@ -65,7 +66,7 @@ useSeoMeta({
               {{ cluster.name }}
             </h3>
             <div class="flex items-center justify-start">
-              <NuxtLink :to="`/clusters/${cluster.id}`"
+              <NuxtLink :to="`/clusters/${cluster.id}-${createSlug(cluster?.name)}`"
                 class="text-white group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold">VIEW
                 GALLERY</NuxtLink>
             </div>
@@ -90,7 +91,7 @@ useSeoMeta({
         </button>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 <style scoped>
 .btn-visit-black {

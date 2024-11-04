@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <section id="section0"
       class="bg-cover bg-center w-full bg-blend md:h-[330px] h-[200px] flex justify-center items-end md:items-center">
       <div class="text-center">
@@ -12,26 +12,28 @@
       </div>
     </section>
 
-    <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-12 md:pt-0">
-      <div class="flex flex-wrap items-stretch justify-center w-full gap-4 px-2 pb-4">
+    <section id="section1" class="bg-[#F8F4EC] w-full justify-center pt-12 md:pt-0 px-6 md:px-12">
+      <div
+        class="grid w-full grid-cols-1 gap-4 pb-4 mx-auto place-self-center tablet:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         <div
-          class="bg-white text-[#38544c] w-full max-w-[350px] tablet:max-w-[48%] md:max-w-[40%] lg:max-w-[31%] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
+          class="bg-white text-[#38544c] w-full px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
           data-aos="fade-up" data-aos-duration="300" v-for="item in news?.data?.data" :key="item.blog_id">
           <div>
             <p class="text-[10px] font-semibold">NEWS - {{ $dayjs(item.date_input).locale("id").fromNow() }}</p>
-            <h3 class="text-xl font-base leading-[1.1] mt-2 line-clamp-3">
+            <h3 class="text-xl font-base leading-[1.3] mt-2 line-clamp-3">
               {{ item.title }}
             </h3>
           </div>
           <div class="mt-auto">
             <hr class="my-3 border-[#BFCEC9FF]" />
-            <NuxtLink :to="`/news/${item.blog_id}`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
+            <NuxtLink :to="`/news/${item.blog_id}-${createSlug(item?.title)}`" class="mb-4 text-[10px] font-bold">READ
+              MORE</NuxtLink>
           </div>
         </div>
       </div>
       <div class="py-4"></div>
     </section>
-  </div>
+  </main>
 </template>
 <script setup>
 const settings = useDataSettings()
@@ -68,4 +70,5 @@ useHead({
 useSeoMeta({
   title: "News",
 });
+const { createSlug } = useApiHelper();
 </script>

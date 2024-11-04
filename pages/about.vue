@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <main>
     <section id="section1" class="relative h-screen">
-      <NuxtImg sizes="360px sm:576px md:768px lg:992px xl:1024px" class="object-cover object-center w-full h-full"
-        :src="`/greenland/images/static/${settings.data.hero_about_image_1}`" format="webp" />
-      <div class="flex flex-row bg-black bg-opacity-20 absolute top-0 left-0 right-0 bottom-0">
+      <NuxtImg :placeholder="[50, 25, 75, 5]" sizes="360px sm:576px md:768px lg:992px xl:1024px"
+        class="object-cover object-center w-full h-full"
+        :src="`/greenland/images/static/${settings.data.hero_about_image_1}`" format="webp" alt="hero banner about" />
+      <div class="absolute top-0 bottom-0 left-0 right-0 flex flex-row bg-black bg-opacity-20">
         <div class="flex items-center justify-start flex-grow">
           <div class="px-8 text-left text-white md:px-16">
             <h1
@@ -54,7 +55,8 @@
           </div>
         </div>
         <div class="flex justify-end order-1 w-full place-items-end md:order-2">
-          <NuxtImg format="webp" :src="`/greenland/images/static/${settings.data.about2_image_banner}`" alt=""
+          <NuxtImg :placeholder="[50, 25, 75, 5]" format="webp"
+            :src="`/greenland/images/static/${settings.data.about2_image_banner}`" alt="about image"
             class="w-full md:pl-[14.9vw] p-5 md:w-3/4 md:p-0" data-aos="fade-down" />
         </div>
       </div>
@@ -77,7 +79,7 @@
       </div>
       <AboutGalery />
     </section>
-  </div>
+  </main>
 </template>
 <style scoped>
 .gradient-text {

@@ -1,13 +1,13 @@
 <template>
   <footer id="footer" class="flex flex-col items-center justify-center pt-10 pb-12 bg-[#3c4f4b] text-white">
     <div class="text-center w-[90%]">
-      <NuxtImg alt="Greenland logo" class="mx-auto mb-10" src="/img/footer-logo.png" data-aos="zoom-in"
-        data-aos-delay="200" width="145" format="webp" />
+      <NuxtImg :placeholder="[50, 25, 75, 5]" alt="Greenland logo" class="mx-auto mb-10" src="/img/footer-logo.png"
+        data-aos="zoom-in" data-aos-delay="200" width="145" format="webp" />
       <p class="text-[10px] font-bold" data-aos="fade-up" data-aos-delay="300">
         CONTACT YOUR PERSONAL AGENT:
       </p>
       <p class="text-[15px] font-bold mb-8" data-aos="fade-up" data-aos-delay="400">
-        <a target="_blank" :href="`https://wa.me/${staticData?.data?.contact_wa}`" style="text-decoration: none">
+        <a target="_blank" :href="`https://wa.me/${settings?.data?.contact_wa}`" style="text-decoration: none">
           {{ settings.data.contact_wa_label }}: {{ settings.data.contact_wa }}
         </a>
       </p>
@@ -20,7 +20,7 @@
         menciptakan lifestyle yang harmonis dengan alam.
       </p>
       <hr class="border-gray-400 mb-6 border-t-[1px]" />
-      <div class="md:flex block justify-between">
+      <div class="justify-between block md:flex">
         <p class="text-[10px]">
           &copy; GREENLAND RESIDENCE 2024 - A PROJECT BY PT BANGUN PERSADA BERJAYA.
         </p>

@@ -2,8 +2,9 @@
   <swiper-container id="section0" effect="fade" autoplay-delay="4000" v-if="status === 'success'">
     <swiper-slide class="flex flex-col justify-center text-start" v-for="slider in sliders.data" v-bind:key="slider.id">
       <div class="relative w-full h-full">
-        <NuxtImg sizes="360px sm:576px md:768px lg:992px xl:1024px" class="object-cover object-center w-full h-full"
-          :src="`/greenland/${slider.image}`" format="webp" />
+        <NuxtImg :placeholder="[50, 25, 75, 5]" sizes="360px sm:576px md:768px lg:992px xl:1024px"
+          class="object-cover object-center w-full h-full" :src="`/greenland/${slider.image}`" format="webp"
+          alt="hero banner image" />
         <div class="pt-[64px] md:pl-20 pl-6 absolute top-0 left-0 bottom-0 right-0 flex justify-center flex-col ">
           <h1
             class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] font-medium leading-[1.1] text-white font-times mobile:max-w-[80%]"

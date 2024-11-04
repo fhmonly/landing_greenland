@@ -48,15 +48,23 @@ onServerPrefetch(async () => {
   serverSettings.value = data.value;
 });
 useServerSeoMeta({
-  titleTemplate: (titleChunk) => {
-    return titleChunk
-      ? `${titleChunk} | Greenland Elegant Homes and Investment`
-      : "Greenland Elegant Homes and Investment";
-  },
-  description: () => settings.value?.data.default_meta_description,
   keywords: () => settings.value?.data.default_meta_keywords,
   title: () => settings.value?.data.default_meta_title,
 });
+useSeoMeta({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | Greenland Cluster` : settings.value?.data.default_meta_title
+  },
+  description: () => settings.value?.data.default_meta_description,
+  ogTitle: () => settings.value?.data.default_meta_title,
+  ogDescription: () => settings.value?.data.default_meta_description,
+  ogImage: "/img/bGBlend.jpg",
+  ogUrl: () => config.public.host,
+  twitterTitle: () => settings.value?.data.default_meta_title,
+  twitterDescription: () => settings.value?.data.default_meta_description,
+  twitterImage: "/img/bGBlend.jpg",
+  twitterCard: 'summary',
+})
 useHead({
   link: [
     {
@@ -87,6 +95,9 @@ useHead({
       type: "image/png",
     },
   ],
+  htmlAttrs: {
+    lang: 'en'
+  }
 });
 
 const { showImageGalery } = useImageGalery()
@@ -101,7 +112,7 @@ onMounted(() => {
     ].map(image => {
       return {
         image,
-        description: "rynare"
+        description: "Rynare"
       }
     })
   })

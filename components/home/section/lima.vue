@@ -1,9 +1,9 @@
 <template>
   <section id="section6" class="flex flex-col bg-white lg:flex-row min-h-[75vh]">
-    <div class="px-5 pt-5 grow md:px-0 md:pt-0">
-      <NuxtImg format="webp" alt="Entrance to Green Land with palm trees and cars on the road"
-        class="object-cover w-full h-full" src="/img/contenTPromo.jpg" width="640" data-aos="fade-up" />
-    </div>
+    <NuxtImg :placeholder="[50, 25, 75, 5]" format="webp"
+      alt="Entrance to Green Land with palm trees and cars on the road"
+      class="object-cover w-full px-5 pt-5 grow md:px-0 md:pt-0" src="/img/contenTPromo.jpg" width="640"
+      data-aos="fade-up" />
     <div
       class="flex flex-col items-start justify-center p-5 md:p-8 lg:p-16 text-size-main shrink-0 w-full lg:max-w-[40%] xl:max-w-[45%] py-10">
       <span class="text-base font-normal text-[#38544c]">

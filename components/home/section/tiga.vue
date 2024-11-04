@@ -15,7 +15,8 @@ onMounted(() => {
 <template>
   <section id="section4" class="py-4 bg-blend md:py-16">
     <div class="py-12 text-center">
-      <h1 class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] text-[#3c4f4b] font-times mb-2 md:px-0 px-12 leading-[1.1]"
+      <h1
+        class="text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] text-[#3c4f4b] font-times mb-2 md:px-0 px-12 leading-[1.1]"
         data-aos="fade-down">
         {{ settings.data.home3_title }}
       </h1>
@@ -49,7 +50,8 @@ onMounted(() => {
         {{ settings.data.home3_content }}
       </p>
       <div class="grid justify-center gap-6 mt-10 md:flex place-items-stretch md:mt-16 md:gap-24">
-        <button class="flex mx-auto btn-visit-black" data-aos="fade-up" data-aos-delay="300">
+        <NuxtLink href="javascript:void(0)" class="flex mx-auto btn-visit-black" data-aos="fade-up"
+          data-aos-delay="300">
           <span class="text-xs tracking-wider text">MORE VIDEOS</span>
           <span class="circle">
             <span class="arrow">
@@ -62,8 +64,9 @@ onMounted(() => {
               </svg>
             </span>
           </span>
-        </button>
-        <button class="flex mx-auto btn-visit-black" data-aos="fade-up" data-aos-delay="300">
+        </NuxtLink>
+        <NuxtLink href="javascript:void(0)" class="flex mx-auto btn-visit-black" data-aos="fade-up"
+          data-aos-delay="300">
           <span class="text-xs tracking-wider text">YOUTUBE CHANNEL</span>
           <span class="circle">
             <span class="arrow">
@@ -76,7 +79,7 @@ onMounted(() => {
               </svg>
             </span>
           </span>
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>

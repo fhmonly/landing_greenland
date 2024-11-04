@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       apiEndpoint: process.env.API_ENDPOINT,
       dirUrl: process.env.DIR_URL,
       apiUrl: process.env.API_URL,
+      host: process.env.HOST
     }
   },
   dayjs: {
@@ -18,7 +19,14 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['nuxt-aos', '@nuxtjs/tailwindcss', '@nuxt/icon', 'dayjs-nuxt', '@nuxt/image'],
+  modules: [
+    'nuxt-aos',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/icon',
+    'dayjs-nuxt',
+    '@nuxt/image',
+    '@nuxtjs/sitemap'
+  ],
   image: {
     domains: [
       'dev-markdesign.my.id'
@@ -27,5 +35,8 @@ export default defineNuxtConfig({
     alias: {
       greenland: 'https://dev-markdesign.my.id/greenland/admin'
     }
+  },
+  sitemap: {
+    include: ["/*"]
   }
 })

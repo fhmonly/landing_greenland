@@ -9,7 +9,8 @@
           </h1>
           <div class="text-black font-nunito text-[17px] md:text-start text-justify no-tailwind leading-[1.6]"
             v-html="settings.data.home1_content"></div>
-          <button class="flex items-center pt-0 btn-visit-green md:pt-5" data-aos="fade-up" data-aos-delay="300">
+          <NuxtLink to="/about" class="flex items-center pt-0 btn-visit-green md:pt-5" data-aos="fade-up"
+            data-aos-delay="300">
             <span class="text-xs tracking-wider text">MORE ABOUT US</span>
             <span class="circle">
               <span class="arrow">
@@ -22,14 +23,14 @@
                 </svg>
               </span>
             </span>
-          </button>
+          </NuxtLink>
         </div>
 
         <div class="order-1 lg:p-5 lg:order-2 max-w-[520px] lg:max-w-[55%] flex lg:mb-0 lg:ps-10">
           <div class="relative flex items-center w-full m-auto lg:pl-20" data-aos="fade-left">
-            <NuxtImg format="webp" :src="`/greenland/images/static/${settings?.data?.home1_image}`"
-              alt="Image description" class="object-cover w-full aspect-square lg:h-full"
-              sizes="360px sm:576px md:50vw" />
+            <NuxtImg :placeholder="[50, 25, 75, 5]" format="webp"
+              :src="`/greenland/images/static/${settings?.data?.home1_image}`" alt="Image description"
+              class="object-cover w-full aspect-square lg:h-full" sizes="360px sm:576px md:50vw" />
             <h3
               class="absolute left-0 hidden lg:block text-3xl font-bold text-white font-times max-w-[230px] text-right"
               v-html="transformNewLineToBrTag({ text: settings.data.home1_small_title, className: 'hidden md:block' })">

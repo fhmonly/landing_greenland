@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <HomeSectionHero class="w-full h-screen" />
     <HomeSectionSatu class="px-6 sm:px-12" />
     <section id="section2" class="px-6 bg-blend-img sm:px-12"></section>
@@ -7,7 +7,7 @@
     <HomeSectionTiga class="px-6 sm:px-12" />
     <HomeSectionEmpat class="px-6 sm:px-12" />
     <HomeSectionLima />
-  </div>
+  </main>
 </template>
 <script setup>
 const settings = useDataSettings()

@@ -8,10 +8,10 @@
       {{ settings.data.home2_small_title }}
     </p>
 
-    <div class="flex flex-wrap items-center justify-center gap-4 mx-auto">
-      <div class="relative group w-full sm:max-w-[48%] lg:max-w-[23%]" data-aos="zoom-in"
-        v-for="cluster in clusters?.data?.data.slice(0, 4)" :key="cluster.id">
-        <LazyNuxtImg format="webp" :src="`/greenland/${cluster.image}`" alt="Photo 1"
+    <div class="grid grid-cols-1 gap-4 mx-auto tablet:grid-cols-2 lg:grid-cols-4">
+      <div class="relative w-full group" data-aos="zoom-in" v-for="cluster in clusters?.data?.data.slice(0, 4)"
+        :key="cluster.id">
+        <LazyNuxtImg :placeholder="[50, 25, 75, 5]" format="webp" :src="`/greenland/${cluster.image}`" alt="Photo 1"
           class="object-cover w-full h-auto" />
         <div
           class="absolute inset-0 flex flex-col justify-end p-5 text-white transition-all duration-300 bg-black bg-opacity-20 group-hover:bg-white group-hover:bg-opacity-50">
@@ -19,7 +19,7 @@
             {{ cluster.name }}
           </h3>
           <div class="flex items-center justify-start">
-            <NuxtLink :to="`/clusters/${cluster.id}`"
+            <NuxtLink :to="`/clusters/${cluster.id}-${createSlug(cluster.name)}`"
               class="text-white group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold">VIEW
               GALLERY</NuxtLink>
           </div>
@@ -28,7 +28,8 @@
     </div>
 
     <div class="pb-8 mt-6 text-center md:mt-16 md:pb-0">
-      <button class="flex items-center pt-5 mx-auto btn-visit-black" data-aos="fade-up" data-aos-delay="300">
+      <NuxtLink to="/clusters" class="flex items-center pt-5 mx-auto btn-visit-black" data-aos="fade-up"
+        data-aos-delay="300">
         <span class="text-xs tracking-wider text">SCHEDULE A VISIT</span>
         <span class="circle">
           <span class="arrow">
@@ -41,7 +42,7 @@
             </svg>
           </span>
         </span>
-      </button>
+      </NuxtLink>
     </div>
   </section>
 </template>
@@ -57,4 +58,5 @@ const {
   pick: ["data"],
   key: "api-clusters",
 });
+const { createSlug } = useApiHelper();
 </script>

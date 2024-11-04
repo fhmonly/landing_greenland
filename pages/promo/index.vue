@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <section id="section0"
       class="bg-cover bg-center w-full bg-blend md:h-[300px] h-[200px] md:pt-40 pt-0 flex justify-center items-end md:items-center">
       <div class="text-center">
@@ -12,27 +12,28 @@
       </div>
     </section>
 
-    <section id="section1" class="bg-[#F8F4EC] w-full justify-center md:pt-12 pt-8 pb-24">
+    <section id="section1" class="bg-[#F8F4EC] w-full justify-center md:pt-12 pt-8 pb-24 px-6 md:px-12">
       <div class="w-full">
-        <div class="flex flex-wrap items-stretch justify-center w-full gap-4 px-2 pb-4">
+        <div class="grid w-full grid-cols-1 gap-4 px-2 pb-4 tablet:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           <div
-            class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
+            class="bg-white text-[#38544c] px-12 py-8 rounded-lg flex flex-col justify-between hover:bg-[#38544c] hover:text-white"
             data-aos="fade-up" data-aos-duration="300" v-for="promo in promos?.data?.data" :key="promo">
             <div>
               <p class="text-[10px] font-semibold">PROMO - {{ $dayjs(promo.date_input).locale("id").fromNow() }}</p>
-              <h3 class="text-xl font-base leading-[1.1] mt-2 line-clamp-3">
+              <h3 class="text-xl font-base leading-[1.3] mt-2 line-clamp-3">
                 {{ promo.title }}
               </h3>
             </div>
             <div class="mt-auto">
               <hr class="my-3 border-[#BFCEC9FF]" />
-              <NuxtLink :to="`/promo/${parseInt(promo.id)}#`" class="mb-4 text-[10px] font-bold">READ MORE</NuxtLink>
+              <NuxtLink :to="`/promo/${parseInt(promo.id)}-${promo.title}`" class="mb-4 text-[10px] font-bold">READ MORE
+              </NuxtLink>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 <script setup>
 const settings = useDataSettings();
