@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="pb-8 mt-6 text-center md:mt-16 md:pb-0">
+    <div class="flex items-center justify-center pb-8 mt-6 text-center md:mt-16 md:pb-0">
       <NuxtLink to="/clusters" class="flex items-center pt-5 mx-auto btn-visit-black" data-aos="fade-up"
         data-aos-delay="300">
         <span class="text-xs tracking-wider text">SCHEDULE A VISIT</span>
